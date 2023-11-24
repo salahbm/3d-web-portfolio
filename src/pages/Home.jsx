@@ -3,11 +3,13 @@ import { Canvas } from "@react-three/fiber";
 import Loader from '../components/Loader';
 import IslandModel from '../models/Island';
 import Sky from '../models/Sky';
+import Bird from '../models/Bird';
+import { Plane } from '@react-three/drei';
 const Home = () => {
 const adjustIslandForScreenSize =   ()=>{
 let screenScale=null;
  let screenPosition=[0,-6.5, -43]
- let rotation = [0.2, 0,0 ]
+ let rotation = [0.09, 0,0 ]
 if (window.innerWidth <768 ) {
     screenScale=[ 0.9,0.9,0.9]
 
@@ -29,8 +31,10 @@ camera={{near:0.1, far:1000}}>
 <directionalLight position={[1,1,1]} intensity={2}/>
 <ambientLight intensity={0.5}/>
 <hemisphereLight skyColor='#b1e1ff' groundColor={'#333'} intensity={1}/>
+<Bird/>
 <Sky/>
 <IslandModel position={isIslandPosition} scale={isIslandScale} rotation={isIslandRotation}/>
+{/* <Plane/> */}
 </Canvas>
 
 </section>
