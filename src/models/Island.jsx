@@ -12,9 +12,78 @@ import {a} from '@react-spring/three'
 import { useFrame, useThree } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import islandScene from '../assets/3d/island.glb'
-const IslandModel=(props) =>{
+const IslandModel=({isRotating, setIsRotating ,...props}) =>{
     const islandRef = useRef()
+    const {gl , viewport } =useThree()
+    const lastX = useRef(0)
+    const rotationSpeed= useRef(0)
+    const dampingFactor =0.95
   const { nodes, materials } = useGLTF(islandScene);
+
+
+  const handlePointerDown = (e)=>{
+e.stopPropagation()
+e.preventDefault
+setIsRotating(true)
+
+
+const clientX = e.touches ? e.touches[0] : e.clientX
+lastX.current = clientX
+  }
+
+  const handlePointerUp = (e)=>{
+e.stopPropagation()
+e.preventDefault
+setIsRotating(false)
+const clientX = e.touches ? e.touches[0] : e.clientX
+const delta  =(clientX - lastX.current) / viewport.width
+
+islandRef.current.rotation.y += delta* 0.01 * Math.PI
+
+lastX.current = clientX
+
+rotationSpeed = delta * 0.01 * Math.PI
+
+
+  }
+
+  const handlePointerMove = (e)=>{
+e.stopPropagation()
+e.preventDefault
+if (isRotating)   handlePointerUp(e)
+  }
+
+const handleKeyMove=(e)=>{
+if(e.key === 'ArrowLeft'){
+  if(!isRotating) setIsRotating(true)
+  islandRef.current.rotation.y += 0.01 * Math.PI
+}else if(e.key === 'ArrowRight'){
+  if(!isRotating) setIsRotating(true)
+  islandRef.current.rotation.y -= 0.01 * Math.PI
+}
+}
+const handleKeyUp=(e)=>{
+  if(e.key === 'ArrowLeft' || e.key === 'ArrowRight'){
+ setIsRotating(false)
+
+  }}
+
+
+useEffect(()=>{
+document.addEventListener('pointerdown', handlePointerDown)
+document.addEventListener('pointerUp',handlePointerUp)
+document.addEventListener('pointermove', handlePointerMove)
+document.addEventListener('keydown', handleKeyMove)
+document.addEventListener('keyup', handleKeyUp)
+return()=>{
+  document.removeEventListener('pointerdown', handlePointerDown)
+document.removeEventListener('pointerUp',handlePointerUp)
+document.removeEventListener('pointermove', handlePointerMove)
+document.addEventListener('keydown', handleKeyMove)
+document.addEventListener('keyup', handleKeyUp)
+}
+  },[gl , handlePointerDown, handlePointerUp, handlePointerMove])
+  
   return (
     <a.group {...props} ref={islandRef}>
       <mesh
