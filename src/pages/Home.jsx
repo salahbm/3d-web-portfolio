@@ -1,7 +1,7 @@
 import React, { Suspense, useState } from 'react'
 import { Canvas } from "@react-three/fiber";
 import Loader from '../components/Loader';
-import IslandModel from '../models/Island';
+import Island from '../models/Island';
 import Sky from '../models/Sky';
 import Bird from '../models/Bird';
 import { Plane } from '@react-three/drei';
@@ -49,7 +49,7 @@ camera={{near:0.1, far:1000}}>
 <hemisphereLight skyColor='#b1e1ff' groundColor={'#333'} intensity={1}/>
 <Bird/>
 <Sky/>
-<IslandModel position={isIslandPosition} scale={isIslandScale} rotation={isIslandRotation} isRotating={isRotating} setIsRotating={setIsRotating}/>
+<Island position={isIslandPosition} scale={isIslandScale} rotation={isIslandRotation} isRotating={isRotating} setIsRotating={setIsRotating}/>
 <Plane planeScale={isPlaneScale} planePosition={isPlanePosition} isRotating={isRotating} rotation={[0,20,0]}/>
 </Canvas>
 
