@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react'
 import { Canvas } from "@react-three/fiber";
+import Loader from '../components/Loader';
 const Home = () => {
   return (
 <section className='w-full h-screen relative'>
