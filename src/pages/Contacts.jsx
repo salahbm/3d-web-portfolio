@@ -1,17 +1,21 @@
 
-import React, { useRef, useState } from 'react'
+import React, { Suspense, useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
+import { Fox } from '../models/Fox'
+import { Canvas } from '@react-three/fiber'
+import Loader from '../components/Loader'
 const Contacts = () => {
   const [form, setForm] = useState({name:'', email:'', message:''})
   const [isLoading, setIsLoading] = useState(false)
+  const [currentAnimation, setCurrentAnimation] = useState('idle')
   const formRef =useRef()
  const handleChange=(e)=>{
   setForm({...form, [e.target.name]: e.target.value})
  }
 const handleFocus=()=>{
-  
+  setCurrentAnimation('walk')
 }
-const handleBlur=()=>{}
+const handleBlur=()=>{setCurrentAnimation('idle')}
 const handleSubmit=(e)=>{
   e.preventDefault()
   setIsLoading(true)
@@ -31,13 +35,22 @@ message: form.message
 import.meta.env.VITE_APP_MAIL_ACCOUNT_PK,
 
   ).then(()=>{
+  setCurrentAnimation('hit')
+
     setIsLoading(false)
     setForm({name:'', email:'', message:''})
   }).catch((e)=>{
     console.log(e.message);
     setIsLoading(false)
+    setTimeout(() => {
+      
+      setCurrentAnimation('idle')
+    }, 3000);
+
   }).finally(()=>{
     console.log('EMAIL SUBMITTED');
+  setCurrentAnimation('idle')
+    
   })
 }
   return (
@@ -106,7 +119,7 @@ import.meta.env.VITE_APP_MAIL_ACCOUNT_PK,
       </form>
     </div>
 
-    {/* <div className='lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]'>
+    <div className='lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]'>
       <Canvas
         camera={{
           position: [0, 0, 5],
@@ -134,7 +147,7 @@ import.meta.env.VITE_APP_MAIL_ACCOUNT_PK,
           />
         </Suspense>
       </Canvas>
-    </div> */}
+    </div>
   </section>
   )
 }
