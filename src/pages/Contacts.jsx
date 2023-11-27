@@ -1,5 +1,6 @@
-import React, { useRef, useState } from 'react'
 
+import React, { useRef, useState } from 'react'
+import emailjs from '@emailjs/browser'
 const Contacts = () => {
   const [form, setForm] = useState({name:'', email:'', message:''})
   const [isLoading, setIsLoading] = useState(false)
@@ -7,12 +8,38 @@ const Contacts = () => {
  const handleChange=(e)=>{
   setForm({...form, [e.target.name]: e.target.value})
  }
-const handleFocus=(e)=>{
-  e.preventDefault()
-  setIsLoading(true)
+const handleFocus=()=>{
+  
 }
 const handleBlur=()=>{}
-const handleSubmit=()=>{}
+const handleSubmit=(e)=>{
+  e.preventDefault()
+  setIsLoading(true)
+
+  emailjs.send(
+
+import.meta.env.VITE_APP_MAIL_SERVICE_ID,
+import.meta.env.VITE_APP_MAIL_TEMPLATE_ID,
+{
+from_name : form.name,
+to_name: 'Muhammad',
+from_email:form.email,
+to_email: 'salahbm@gmail.com',
+message: form.message
+
+},
+import.meta.env.VITE_APP_MAIL_ACCOUNT_PK,
+
+  ).then(()=>{
+    setIsLoading(false)
+    setForm({name:'', email:'', message:''})
+  }).catch((e)=>{
+    console.log(e.message);
+    setIsLoading(false)
+  }).finally(()=>{
+    console.log('EMAIL SUBMITTED');
+  })
+}
   return (
     <section className='relative flex lg:flex-row flex-col max-container'>
     {alert.show && <Alert {...alert} />}
