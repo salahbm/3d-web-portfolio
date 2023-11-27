@@ -4,10 +4,13 @@ import emailjs from '@emailjs/browser'
 import { Fox } from '../models/Fox'
 import { Canvas } from '@react-three/fiber'
 import Loader from '../components/Loader'
+import Alert from '../components/Alert'
+import useAlert from '../hook/useAlert';
 const Contacts = () => {
   const [form, setForm] = useState({name:'', email:'', message:''})
   const [isLoading, setIsLoading] = useState(false)
   const [currentAnimation, setCurrentAnimation] = useState('idle')
+  const { alert, showAlert, hideAlert } = useAlert();
   const formRef =useRef()
  const handleChange=(e)=>{
   setForm({...form, [e.target.name]: e.target.value})
@@ -16,43 +19,57 @@ const handleFocus=()=>{
   setCurrentAnimation('walk')
 }
 const handleBlur=()=>{setCurrentAnimation('idle')}
-const handleSubmit=(e)=>{
-  e.preventDefault()
-  setIsLoading(true)
+const handleSubmit = (e) => {
+  e.preventDefault();
+  setCurrentAnimation("hit");
+  setIsLoading(true);
 
-  emailjs.send(
+  emailjs
+    .send(
+      import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+      {
+        from_name: form.name,
+        to_name: "Muhammad",
+        from_email: form.email,
+        to_email: "salahbm.001@gmail.com",
+        message: form.message,
+      },
+      import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+    )
 
-import.meta.env.VITE_APP_MAIL_SERVICE_ID,
-import.meta.env.VITE_APP_MAIL_TEMPLATE_ID,
-{
-from_name : form.name,
-to_name: 'Muhammad',
-from_email:form.email,
-to_email: 'salahbm@gmail.com',
-message: form.message
+    .then(
+      () => {
+        setIsLoading(false);
+        showAlert({
+          show: true,
+          text: "Thank you for your message 😃",
+          type: "success",
+        });
 
-},
-import.meta.env.VITE_APP_MAIL_ACCOUNT_PK,
+        setTimeout(() => {
+          hideAlert(false);
+          setCurrentAnimation("idle");
+          setForm({
+            name: "",
+            email: "",
+            message: "",
+          });
+        }, [3000]);
+      },
+      (error) => {
+        setIsLoading(false);
+        console.error(error);
+        setCurrentAnimation("idle");
 
-  ).then(()=>{
-  setCurrentAnimation('hit')
-
-    setIsLoading(false)
-    setForm({name:'', email:'', message:''})
-  }).catch((e)=>{
-    console.log(e.message);
-    setIsLoading(false)
-    setTimeout(() => {
-      
-      setCurrentAnimation('idle')
-    }, 3000);
-
-  }).finally(()=>{
-    console.log('EMAIL SUBMITTED');
-  setCurrentAnimation('idle')
-    
-  })
-}
+        showAlert({
+          show: true,
+          text: "I didn't receive your message 😢",
+          type: "danger",
+        });
+      }
+    );
+};
   return (
     <section className='relative flex lg:flex-row flex-col max-container'>
     {alert.show && <Alert {...alert} />}
