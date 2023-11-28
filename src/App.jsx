@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Contacts from './pages/Contacts';
+import Footer from './components/Footer';
 const App = () => {
   return (
 <main className='bg-slate-300/20'>
@@ -16,8 +17,8 @@ const App = () => {
       <Route path='/projects' element={<Projects/>}/>
       <Route path='/contact' element={<Contacts/>}/>
     </Routes>
+<Footer/>
   </Router>
-
 </main>
   )
 }
