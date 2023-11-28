@@ -4,10 +4,13 @@ import {
     estate,
     github,
     linkedin,
+    naver,
+    nia,
     pricewise,
     snapgram,
     summiz,
-    threads
+    threads,
+    twitter
 } from "../assets/icons";
 
 
@@ -31,47 +34,113 @@ export const socialLinks = [
     }
 ];
 
+
+
 export const projects = [
     {
-        iconUrl: pricewise,
-        theme: 'btn-back-red',
-        name: 'Amazon Price Tracker',
-        description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
-        link: 'https://github.com/adrianhajdin/pricewise',
-    },
-    {
-        iconUrl: threads,
-        theme: 'btn-back-green',
-        name: 'Full Stack Threads Clone',
-        description: 'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-        link: 'https://github.com/adrianhajdin/threads',
-    },
-    {
-        iconUrl: car,
-        theme: 'btn-back-blue',
-        name: 'Car Finding App',
-        description: 'Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.',
-        link: 'https://github.com/adrianhajdin/project_next13_car_showcase',
-    },
-    {
-        iconUrl: snapgram,
-        theme: 'btn-back-pink',
-        name: 'Full Stack Instagram Clone',
-        description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
-        link: 'https://github.com/adrianhajdin/social_media_app',
-    },
-    {
-        iconUrl: estate,
+   name: 'Nia Labs Seoul',
+            iconUrl: nia,
+    
         theme: 'btn-back-black',
-        name: 'Real-Estate Application',
-        description: 'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
-        link: 'https://github.com/adrianhajdin/projects_realestate',
+              link: 'https://github.com/adrianhajdin/projects_realestate',
+    
+       description:  [
+        'Developed Cryptocurrency Tracker based on Ethereum using ReactJS and NodeJS.',
+        'Created several Cryptocurrency wallets that can work with both crypto tokens and bank wallets using React Native.',
+        'Enabled FIDO2 security with TrusKey.',
+      ],
     },
     {
-        iconUrl: summiz,
-        theme: 'btn-back-yellow',
-        name: 'AI Summarizer Application',
-        description: 'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
-        link: 'https://github.com/adrianhajdin/project_ai_summarizer',
-    }
-];
+   name: 'Naver Selenium Automation',
+            iconUrl: naver,
+    
+            theme: 'btn-back-yellow',
+              link: 'https://github.com/salahbm/selenium-demo',
+    
+       description:  [
+        'Led the development of a dynamic e-commerce platform for jewellery, ensuring a seamless shopping experience for a diverse customer base.',
+        'Designed and developed a responsive website for optimal performance on all devices.',
+        'Implemented strong security measures and secure payment methods to protect customer data and transactions, contributing to startup growth.',
+      ],
+    },
+    {
+   name: 'Mr. Joni Web USA',
+            iconUrl: estate,
+    
+            theme: 'btn-back-yellow',
+              link: 'https://github.com/adrianhajdin/projects_realestate',
+    
+       description:  [
+        'Led the development of a dynamic e-commerce platform for jewellery, ensuring a seamless shopping experience for a diverse customer base.',
+        'Designed and developed a responsive website for optimal performance on all devices.',
+        'Implemented strong security measures and secure payment methods to protect customer data and transactions, contributing to startup growth.',
+      ],
+    },
+    {
+   name: 'Snapgram',
+            iconUrl: twitter,
+    
+            theme: 'btn-back-red',
+              link: 'https://github.com/salahbm/snapgram',
+     
+    
+       description:  [
+        'Instagram Clone: Build and Deploy a Full Stack Social Media App | React JS, Appwrite, Tailwind CSS, React Query, Vite',
+      ],
+    },
+    {
+   name: 'Metamask Extention',
+            iconUrl: estate,
+    
+            theme: 'btn-back-blue',
+              link: 'https://github.com/salahbm/fido2-on-Metamask_extension',
+    
+       description:  [
+        'Implemented FIDO2 passwordless login and signup on the extension',
+      ],
+    },
+ 
+    {
+   name: 'Crypto Wallet',
+            iconUrl: summiz,
+    
+        theme: 'btn-back-black',
+              link: 'https://github.com/salahbm/CryptoWallet',
+     
+    
+       description:  [
+        'The wallet app is made by using React Native, and runs on both Platforms. Main functionality to send the tokens and receive them on Ethereum main-net, and 3 more test-nets. Used ethers library to implement. Also, the app can support multi user authentication which is held by AsyncStorage. Moreover, coingecko and rainbow are used for token price ...',
+      ],
+    },
+    {
+        name: 'ShopMe',
+                 iconUrl: estate,
+         
+             theme: 'btn-back-pink',
+                   link: 'https://github.com/salahbm/shopme',
+          
+         
+            description:  [
+             'next js eCommerse website uses tailwind, stripe, firebase, redux-toolkit and etc',
+           ],
+         },
+    {
+   name: 'Other Projects',
+            iconUrl: github,
+    
+        theme: 'btn-back-black',
+              link: 'https://github.com/salahbm?tab=repositories',
+     
+    
+       description:  [
+        'Please visit my github page to see other projects which are not listed above',
+      ],
+    },
+  ];
+  
+  const awards = [
+    'ELS Teacher (C1 Level)',
+    'High School Gold Medal',
+    'IELTS 8 score',
+  ];
+  

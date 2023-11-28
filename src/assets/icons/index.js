@@ -29,6 +29,8 @@ import figma from './figma.svg'
 import firebase from './firebase.svg'
 import gitlab from './gitlab.svg'
 import kotlin from './kotlin.svg'
+import naver from './naver.svg'
+import nia from './nia.svg'
 import query from './query.svg'
 import swift from './swift.svg'
 import vite from './vite.svg'
@@ -77,5 +79,7 @@ swift,
 vite,
 appwrite,
 threejs,
-shadcn
+shadcn,
+naver,
+nia
 }

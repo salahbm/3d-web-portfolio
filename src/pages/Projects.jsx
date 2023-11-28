@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { projects } from "../constant/skills";
+
 import CTA from "../components/CTA";
 import { arrow } from "../assets/icons";
+import { projects } from "../constant/skills";
 
 
 
