@@ -20,7 +20,7 @@ export const socialLinks = [
     {
         name: 'Contact',
         iconUrl: contact,
-        link: 'https://salah-portfolio-alpha.vercel.app/contact',
+        link: 'https://t.me/imsalah19',
     },
     {
         name: 'GitHub',
