@@ -73,7 +73,7 @@ camera={{near:0.1, far:1000}}>
 <Sky isRotating={isRotating}/>
 <Island position={isIslandPosition} scale={isIslandScale} rotation={isIslandRotation} isRotating={isRotating} setIsRotating={setIsRotating} setCurrentStage={setCurrentStage}/>
 
-<FlyingPlane scale={isPlaneScale} position={isPlanePosition} isRotating={isRotating}  />
+<FlyingPlane scale={isPlaneScale} position={isPlanePosition} isRotating={isRotating}        rotation={[0, 0.1, 0]}/>
 </Suspense>
 </Canvas>
 
