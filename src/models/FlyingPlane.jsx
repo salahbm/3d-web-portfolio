@@ -34,9 +34,9 @@ export function FlyingPlane({ isRotating, ...props }) {
 
   return (
     <mesh ref={ref} 
-    position={[-0, -1, 3]} 
-    scale={[-0.9, 1, 1]} 
-
+    // position={[-0, -1, 3]} 
+    // scale={[-0.9, 1, 1]} 
+{...props}
 
     >
       // use the primitive element when you want to directly embed a complex 3D

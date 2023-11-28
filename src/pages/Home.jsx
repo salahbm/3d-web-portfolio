@@ -21,7 +21,7 @@ let screenScale=null;
  let screenPosition=[0,-6.5, -43]
  let rotation = [0.09, 0,0 ]
 if (window.innerWidth <768 ) {
-    screenScale=[ 0.9,0.9,0.9]
+    screenScale=[ 0.6,0.6,0.6]
 
     
 }else{
@@ -32,13 +32,15 @@ return [screenPosition, screenScale,rotation]
 const adjustBiplaneForScreenSize = () => {
   let screenScale, screenPosition;
 
+      // position={[-0, -1, 3]} 
+    // scale={[-0.9, 1, 1]} 
   // If screen width is less than 768px, adjust the scale and position
   if (window.innerWidth < 768) {
-    screenScale = [1.5, 2.5, 1.5];
-    screenPosition = [0, -1.5, 0];
+    screenScale =[-0.9, 0.8, 0.8]
+    screenPosition =[-0, -1, 3]
   } else {
-    screenScale = [3, 3, 3];
-    screenPosition = [0, -4, -4];
+    screenScale = [-0.9, 1, 1]
+    screenPosition =[-0, -1, 3]
   }
 
   return [screenScale, screenPosition];
@@ -71,7 +73,7 @@ camera={{near:0.1, far:1000}}>
 <Sky isRotating={isRotating}/>
 <Island position={isIslandPosition} scale={isIslandScale} rotation={isIslandRotation} isRotating={isRotating} setIsRotating={setIsRotating} setCurrentStage={setCurrentStage}/>
 
-<FlyingPlane planeScale={isPlaneScale} planePosition={isPlanePosition} isRotating={isRotating}  />
+<FlyingPlane scale={isPlaneScale} position={isPlanePosition} isRotating={isRotating}  />
 </Suspense>
 </Canvas>
 
