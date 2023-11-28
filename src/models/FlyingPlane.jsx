@@ -9,27 +9,35 @@ Title: Plane Flying Circus - Game Art
 import { useAnimations, useGLTF } from "@react-three/drei";
 import React, { useEffect, useRef } from "react";
 import planeScene from '../assets/3d/flyingPlane.glb';
+import { useFrame } from "@react-three/fiber";
 export function FlyingPlane({ isRotating, ...props }) {
   const ref = useRef();
-
   const { scene, animations } = useGLTF(planeScene);
-
   const { actions } = useAnimations(animations, ref);
-
-
     useEffect(() => {
       const rotationAction = actions.rotation;
       rotationAction.play().setEffectiveTimeScale(8);
-  
     }, [actions.rotation]);
     
-  
-
+    useFrame(({ clock }) => {
+      const initialY = ref.current.position.y;
+      const newY = Math.sin(clock.elapsedTime) * 0.002 + initialY;
+      ref.current.position.y = newY;
+    
+      if (isRotating) {
+        const initialX = ref.current.position.x;
+        const newX = Math.sin(clock.elapsedTime) * 0.002 +initialX;
+        ref.current.position.x = newX; // Corrected line: use position.x instead of position.y
+      }
+    });
+    
 
   return (
     <mesh ref={ref} 
     position={[-0, -1, 3]} 
-    scale={[0.9, 1, 1]}
+    scale={[-0.9, 1, 1]} 
+
+
     >
       // use the primitive element when you want to directly embed a complex 3D
       model or scene
