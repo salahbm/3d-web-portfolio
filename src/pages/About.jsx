@@ -6,7 +6,7 @@ import "react-vertical-timeline-component/style.min.css";
 import { useState,useEffect} from "react";
 import { Back, Front, langAndState,  UI } from '../constant/techList';
 import CTA from "../components/CTA";
-import { experiences } from './../constant/skills';
+import { experiences } from './../constant/experience';
 
 
 
