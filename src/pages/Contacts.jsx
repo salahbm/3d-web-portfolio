@@ -26,8 +26,8 @@ const handleSubmit = (e) => {
 
   emailjs
     .send(
-      import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+      import.meta.env.VITE_APP_MAIL_SERVICE_ID,
+      import.meta.env.VITE_APP_MAIL_TEMPLATE_ID,
       {
         from_name: form.name,
         to_name: "Muhammad",
@@ -35,7 +35,7 @@ const handleSubmit = (e) => {
         to_email: "salahbm.001@gmail.com",
         message: form.message,
       },
-      import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+      import.meta.env.VITE_APP_MAIL_ACCOUNT_PK
     )
 
     .then(
