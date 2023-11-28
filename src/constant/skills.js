@@ -26,17 +26,20 @@ import {
     typescript
 } from "../assets/icons";
 
-export const skills = [
+export const langAndState = [
     {
-        imageUrl: css,
-        name: "CSS",
+        imageUrl: typescript,
+        name: "TypeScript",
         type: "Frontend",
     },
+
     {
-        imageUrl: express,
-        name: "Express",
-        type: "Backend",
+        imageUrl: javascript,
+        name: "JavaScript",
+        type: "Frontend",
     },
+
+
     {
         imageUrl: git,
         name: "Git",
@@ -47,44 +50,16 @@ export const skills = [
         name: "GitHub",
         type: "Version Control",
     },
+ 
+
     {
-        imageUrl: html,
-        name: "HTML",
+        imageUrl: typescript,
+        name: "Swift",
         type: "Frontend",
     },
     {
-        imageUrl: javascript,
-        name: "JavaScript",
-        type: "Frontend",
-    },
-    {
-        imageUrl: mongodb,
-        name: "MongoDB",
-        type: "Database",
-    },
-    {
-        imageUrl: motion,
-        name: "Motion",
-        type: "Animation",
-    },
-    {
-        imageUrl: mui,
-        name: "Material-UI",
-        type: "Frontend",
-    },
-    {
-        imageUrl: nextjs,
-        name: "Next.js",
-        type: "Frontend",
-    },
-    {
-        imageUrl: nodejs,
-        name: "Node.js",
-        type: "Backend",
-    },
-    {
-        imageUrl: react,
-        name: "React",
+        imageUrl: typescript,
+        name: "Kotlin",
         type: "Frontend",
     },
     {
@@ -93,8 +68,78 @@ export const skills = [
         type: "State Management",
     },
     {
-        imageUrl: sass,
-        name: "Sass",
+        imageUrl: redux,
+        name: "React Query",
+        type: "State Management",
+    },
+
+
+
+
+];
+export const Back=[    {
+    imageUrl: mongodb,
+    name: "MongoDB",
+    type: "Database",
+},
+
+
+{
+    imageUrl: nodejs,
+    name: "Node.js",
+    type: "Backend",
+},
+{
+    imageUrl: nodejs,
+    name: "AWS",
+    type: "Backend",
+},
+{
+    imageUrl: nodejs,
+    name: "Appwrite",
+    type: "Backend",
+},
+{
+    imageUrl: nodejs,
+    name: "Firebase",
+    type: "Backend",
+},    {
+    imageUrl: express,
+    name: "Express",
+    type: "Backend",
+},]
+export const Front=[      {
+    imageUrl: html,
+    name: "HTML",
+    type: "Frontend",
+},    {
+    imageUrl: nextjs,
+    name: "Next.js",
+    type: "Frontend",
+},
+{
+    imageUrl: nextjs,
+    name: "Vite.js",
+    type: "Frontend",
+},
+{
+    imageUrl: nextjs,
+    name: "Three.js",
+    type: "Frontend",
+},
+{
+    imageUrl: react,
+    name: "React",
+    type: "Frontend",
+},  {
+    imageUrl: typescript,
+    name: "React-Native",
+    type: "Frontend",
+},]
+export const UI=[
+    {
+        imageUrl: css,
+        name: "CSS",
         type: "Frontend",
     },
     {
@@ -103,11 +148,21 @@ export const skills = [
         type: "Frontend",
     },
     {
-        imageUrl: typescript,
-        name: "TypeScript",
+        imageUrl: tailwindcss,
+        name: "Figma",
         type: "Frontend",
-    }
-];
+    },
+
+    {
+        imageUrl: mui,
+        name: "Material-UI",
+        type: "Frontend",
+    },    {
+        imageUrl: mui,
+        name: "Shadcn/Ui",
+        type: "Frontend",
+    },
+]
 
 export const experiences = [
     {

@@ -3,8 +3,9 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { experiences, skills } from '../constant/skills';
+import { Back, Front, experiences, langAndState,  } from '../constant/skills';
 import CTA from "../components/CTA";
+import { UI } from "../constant/techList";
 
 const About = () => {
   return (
@@ -26,18 +27,71 @@ const About = () => {
       </div>
 
       <div className='py-10 flex flex-col'>
-        <h3 className='subhead-text'>My Skills</h3>
-
+        <h3 className='subhead-text font-bold  text-center'>My Skills</h3>
+        <hr className="text-neutral-600 my-2"/>
+          <p className='subhead-text'>Language/State/Git</p>
         <div className='mt-16 flex flex-wrap gap-12'>
-          {skills.map((skill) => (
+          {langAndState.map((skill) => (
             <div className='block-container w-20 h-20' key={skill.name}>
               <div className='btn-back rounded-xl' />
-              <div className='btn-front rounded-xl flex justify-center items-center'>
+              <div className='btn-front rounded-xl flex justify-center items-center flex-col p-2'>
                 <img
                   src={skill.imageUrl}
                   alt={skill.name}
                   className='w-1/2 h-1/2 object-contain'
                 />
+              <p className="blue-gradient_text my-1 text-sm whitespace-nowrap">{skill.name}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <hr className="text-neutral-600 my-2"/>
+        <p className='subhead-text'>Front-End</p>
+        <div className='mt-16 flex flex-wrap gap-12'>
+          {Front.map((skill) => (
+            <div className='block-container w-20 h-20' key={skill.name}>
+              <div className='btn-back rounded-xl' />
+                    <div className='btn-front rounded-xl flex justify-center items-center flex-col p-2'>
+                <img
+                  src={skill.imageUrl}
+                  alt={skill.name}
+                  className='w-1/2 h-1/2 object-contain'
+                />
+              <p className="blue-gradient_text my-1 text-sm whitespace-nowrap">{skill.name}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <hr className="text-neutral-600 my-2"/>
+        <p className='subhead-text'>Back-End</p>
+        <div className='mt-16 flex flex-wrap gap-12'>
+          {Back.map((skill) => (
+            <div className='block-container w-20 h-20' key={skill.name}>
+              <div className='btn-back rounded-xl' />
+                    <div className='btn-front rounded-xl flex justify-center items-center flex-col p-2'>
+                <img
+                  src={skill.imageUrl}
+                  alt={skill.name}
+                  className='w-1/2 h-1/2 object-contain'
+                />
+              <p className="blue-gradient_text my-1 text-sm whitespace-nowrap">{skill.name}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <hr className="text-neutral-600 my-2"/>
+        <p className='subhead-text'>UI</p>
+        <div className='mt-16 flex flex-wrap gap-12'>
+          {UI.map((skill) => (
+            <div className='block-container w-20 h-20' key={skill.name}>
+              <div className='btn-back rounded-xl' />
+                    <div className='btn-front rounded-xl flex justify-center items-center flex-col p-2'>
+                <img
+                  src={skill.imageUrl}
+                  alt={skill.name}
+                  className='w-1/2 h-1/2 object-contain'
+                />
+              <p className="blue-gradient_text my-1 text-sm whitespace-nowrap">{skill.name}</p>
               </div>
             </div>
           ))}
