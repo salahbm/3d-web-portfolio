@@ -8,7 +8,7 @@ import Alert from '../components/Alert'
 import useAlert from '../hook/useAlert';
 const Contacts = () => {
   const [form, setForm] = useState({name:'', email:'', message:''})
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const [currentAnimation, setCurrentAnimation] = useState('idle')
   const { alert, showAlert, hideAlert } = useAlert();
   const formRef =useRef()
