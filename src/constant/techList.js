@@ -30,7 +30,7 @@ export const langAndState = [
         imageUrl: typescript,
         name: "TypeScript",
         type: "Frontend",
-        level:3
+        level:3.6
     },
 
     {
@@ -71,7 +71,7 @@ export const langAndState = [
         imageUrl: kotlin,
         name: "Kotlin",
         type: "Frontend",
-        level:1
+        level:1.5
     },
     {
         imageUrl: redux,
@@ -83,7 +83,7 @@ export const langAndState = [
         imageUrl: query,
         name: "React Query",
         type: "State Management",
-        level:3
+        level:3.5
     },
 
 
@@ -94,7 +94,7 @@ export const Back=[    {
     imageUrl: mongodb,
     name: "MongoDB",
     type: "Database",
-    level:3
+    level:3.2
 },
 
 
@@ -108,7 +108,7 @@ export const Back=[    {
     imageUrl: aws,
     name: "AWS",
     type: "Backend",
-    level:3
+    level:2.5
 },
 {
     imageUrl: appwrite,
@@ -125,7 +125,7 @@ export const Back=[    {
     imageUrl: express,
     name: "Express",
     type: "Backend",
-    level:4
+    level:3.5
 },]
 export const Front=[      {
     imageUrl: html,
