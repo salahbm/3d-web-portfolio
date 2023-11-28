@@ -1,13 +1,20 @@
 import { Canvas } from "@react-three/fiber";
-import React, { Suspense, useState } from 'react';
+import React, { Suspense, useState , useEffect, useRef} from 'react';
 import HomeInfo from '../components/HomeInfo';
 import Loader from '../components/Loader';
 import Bird from '../models/Bird';
 import { FlyingPlane } from '../models/FlyingPlane';
 import Island from '../models/Island';
 import Sky from '../models/Sky';
+import sakura2 from '../assets/sakura2.mp3'
+import { soundoff, soundon } from "../assets/icons";
 const Home = () => {
+  const audioRef = useRef(new Audio(sakura2))
+  audioRef.current.volume=0.4
+  audioRef.current.loop=true
+
   const [isRotating, setIsRotating] = useState(false)
+  const [isPlayingSong, setIsPlayingSong] = useState(false)
   const [currentStage, setCurrentStage] = useState(1)
 const adjustIslandForScreenSize =   ()=>{
 let screenScale=null;
@@ -39,7 +46,14 @@ const adjustBiplaneForScreenSize = () => {
 const [isPlaneScale, isPlanePosition] = adjustBiplaneForScreenSize();
 const [isIslandPosition, isIslandScale,isIslandRotation]=adjustIslandForScreenSize()
 
-
+useEffect(()=>{
+if (isPlayingSong) {
+  audioRef.current.play()
+}
+return()=>{
+  audioRef.current.pause()
+}
+},[isPlayingSong])
 
   return (
 <section className='w-full h-screen relative'>
@@ -60,6 +74,12 @@ camera={{near:0.1, far:1000}}>
 <FlyingPlane planeScale={isPlaneScale} planePosition={isPlanePosition} isRotating={isRotating}  />
 </Suspense>
 </Canvas>
+
+{/* music */}
+<div className="absolute bottom-4 right-4 flex flex-col items-center ">
+  <p className='blue-gradient_text  rotate-90 transform font-bold mb-10 lg:block hidden'>Sound {isPlayingSong ? 'On':'Off'}</p>
+  <img src={isPlayingSong ? soundon: soundoff} alt="SoundOn" className="w-10 h-10 cursor-pointer object-contain" onClick={()=>setIsPlayingSong(!isPlayingSong)}/>
+</div>
 
 </section>
   )
