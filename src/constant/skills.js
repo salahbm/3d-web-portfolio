@@ -20,7 +20,7 @@ export const socialLinks = [
     {
         name: 'Contact',
         iconUrl: contact,
-        link: '/contacts',
+        link: '/contact',
     },
     {
         name: 'GitHub',
