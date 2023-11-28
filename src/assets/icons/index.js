@@ -24,8 +24,19 @@ import summiz from './summiz.svg'
 import threads from './threads.svg'
 import arrow from './arrow.svg'
 import contact from './contact.svg'
+import aws from './aws.svg'
+import figma from './figma.svg'
+import firebase from './firebase.svg'
+import gitlab from './gitlab.svg'
+import kotlin from './kotlin.svg'
+import query from './query.svg'
+import swift from './swift.svg'
+import vite from './vite.svg'
+import appwrite from './icon.svg'
+import threejs from './Appwrite.svg'
 import soundon from './soundon.png'
 import soundoff from './soundoff.png'
+import shadcn from './shadcn.png'
 
 export {
     css,
@@ -55,5 +66,16 @@ export {
     arrow,
     contact,
     soundon,
-    soundoff
+    soundoff,
+    aws,
+figma,
+firebase,
+gitlab,
+kotlin,
+query,
+swift,
+vite,
+appwrite,
+threejs,
+shadcn
 }

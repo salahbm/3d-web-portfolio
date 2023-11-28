@@ -1,168 +1,17 @@
-import { meta, shopify, starbucks, tesla } from "../assets/images";
 import {
     car,
     contact,
-    css,
     estate,
-    express,
-    git,
     github,
-    html,
-    javascript,
     linkedin,
-    mongodb,
-    motion,
-    mui,
-    nextjs,
-    nodejs,
     pricewise,
-    react,
-    redux,
-    sass,
     snapgram,
     summiz,
-    tailwindcss,
-    threads,
-    typescript
+    threads
 } from "../assets/icons";
-
-export const langAndState = [
-    {
-        imageUrl: typescript,
-        name: "TypeScript",
-        type: "Frontend",
-    },
-
-    {
-        imageUrl: javascript,
-        name: "JavaScript",
-        type: "Frontend",
-    },
+import { meta, shopify, starbucks, tesla } from "../assets/images";
 
 
-    {
-        imageUrl: git,
-        name: "Git",
-        type: "Version Control",
-    },
-    {
-        imageUrl: github,
-        name: "GitHub",
-        type: "Version Control",
-    },
- 
-
-    {
-        imageUrl: typescript,
-        name: "Swift",
-        type: "Frontend",
-    },
-    {
-        imageUrl: typescript,
-        name: "Kotlin",
-        type: "Frontend",
-    },
-    {
-        imageUrl: redux,
-        name: "Redux",
-        type: "State Management",
-    },
-    {
-        imageUrl: redux,
-        name: "React Query",
-        type: "State Management",
-    },
-
-
-
-
-];
-export const Back=[    {
-    imageUrl: mongodb,
-    name: "MongoDB",
-    type: "Database",
-},
-
-
-{
-    imageUrl: nodejs,
-    name: "Node.js",
-    type: "Backend",
-},
-{
-    imageUrl: nodejs,
-    name: "AWS",
-    type: "Backend",
-},
-{
-    imageUrl: nodejs,
-    name: "Appwrite",
-    type: "Backend",
-},
-{
-    imageUrl: nodejs,
-    name: "Firebase",
-    type: "Backend",
-},    {
-    imageUrl: express,
-    name: "Express",
-    type: "Backend",
-},]
-export const Front=[      {
-    imageUrl: html,
-    name: "HTML",
-    type: "Frontend",
-},    {
-    imageUrl: nextjs,
-    name: "Next.js",
-    type: "Frontend",
-},
-{
-    imageUrl: nextjs,
-    name: "Vite.js",
-    type: "Frontend",
-},
-{
-    imageUrl: nextjs,
-    name: "Three.js",
-    type: "Frontend",
-},
-{
-    imageUrl: react,
-    name: "React",
-    type: "Frontend",
-},  {
-    imageUrl: typescript,
-    name: "React-Native",
-    type: "Frontend",
-},]
-export const UI=[
-    {
-        imageUrl: css,
-        name: "CSS",
-        type: "Frontend",
-    },
-    {
-        imageUrl: tailwindcss,
-        name: "Tailwind CSS",
-        type: "Frontend",
-    },
-    {
-        imageUrl: tailwindcss,
-        name: "Figma",
-        type: "Frontend",
-    },
-
-    {
-        imageUrl: mui,
-        name: "Material-UI",
-        type: "Frontend",
-    },    {
-        imageUrl: mui,
-        name: "Shadcn/Ui",
-        type: "Frontend",
-    },
-]
 
 export const experiences = [
     {

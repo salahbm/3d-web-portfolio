@@ -1,18 +1,28 @@
 import {
+    appwrite,
+    aws,
     css,
     express,
+    firebase,
     git,
     github,
+    gitlab,
     html,
     javascript,
+    kotlin,
     mongodb,
     mui,
     nextjs,
     nodejs,
+    query,
     react,
     redux,
+    shadcn,
+    swift,
     tailwindcss,
-    typescript
+    threejs,
+    typescript,
+    vite
 } from "../assets/icons";
 
 export const langAndState = [
@@ -20,12 +30,14 @@ export const langAndState = [
         imageUrl: typescript,
         name: "TypeScript",
         type: "Frontend",
+        level:3
     },
 
     {
         imageUrl: javascript,
         name: "JavaScript",
         type: "Frontend",
+        level:4
     },
 
 
@@ -33,33 +45,45 @@ export const langAndState = [
         imageUrl: git,
         name: "Git",
         type: "Version Control",
+        level:3.5
     },
     {
         imageUrl: github,
         name: "GitHub",
         type: "Version Control",
+        level:4
+    },
+    {
+        imageUrl: gitlab,
+        name: "Gitlab",
+        type: "Version Control",
+        level:4
     },
  
 
     {
-        imageUrl: typescript,
+        imageUrl: swift,
         name: "Swift",
         type: "Frontend",
+        level:2
     },
     {
-        imageUrl: typescript,
+        imageUrl: kotlin,
         name: "Kotlin",
         type: "Frontend",
+        level:1
     },
     {
         imageUrl: redux,
         name: "Redux",
         type: "State Management",
+        level:3
     },
     {
-        imageUrl: redux,
+        imageUrl: query,
         name: "React Query",
         type: "State Management",
+        level:3
     },
 
 
@@ -70,6 +94,7 @@ export const Back=[    {
     imageUrl: mongodb,
     name: "MongoDB",
     type: "Database",
+    level:3
 },
 
 
@@ -77,78 +102,94 @@ export const Back=[    {
     imageUrl: nodejs,
     name: "Node.js",
     type: "Backend",
+    level:3
 },
 {
-    imageUrl: nodejs,
+    imageUrl: aws,
     name: "AWS",
     type: "Backend",
+    level:3
 },
 {
-    imageUrl: nodejs,
+    imageUrl: appwrite,
     name: "Appwrite",
     type: "Backend",
+    level:4
 },
 {
-    imageUrl: nodejs,
+    imageUrl: firebase,
     name: "Firebase",
     type: "Backend",
+    level:4
 },    {
     imageUrl: express,
     name: "Express",
     type: "Backend",
+    level:4
 },]
 export const Front=[      {
     imageUrl: html,
     name: "HTML",
     type: "Frontend",
+    level:5
 },    {
     imageUrl: nextjs,
     name: "Next.js",
     type: "Frontend",
+    level:4
 },
 {
-    imageUrl: nextjs,
+    imageUrl: vite,
     name: "Vite.js",
     type: "Frontend",
+    level:4
 },
 {
-    imageUrl: nextjs,
+    imageUrl:threejs,
     name: "Three.js",
     type: "Frontend",
+    level:3
 },
 {
     imageUrl: react,
     name: "React",
     type: "Frontend",
+    level:5
 },  {
     imageUrl: typescript,
     name: "React-Native",
     type: "Frontend",
+    level:5
 },]
 export const UI=[
     {
         imageUrl: css,
         name: "CSS",
         type: "Frontend",
+        level:5
     },
     {
         imageUrl: tailwindcss,
         name: "Tailwind CSS",
         type: "Frontend",
+        level:4
     },
     {
         imageUrl: tailwindcss,
         name: "Figma",
         type: "Frontend",
+        level:4
     },
 
     {
         imageUrl: mui,
         name: "Material-UI",
         type: "Frontend",
+        level:5
     },    {
-        imageUrl: mui,
+        imageUrl: shadcn,
         name: "Shadcn/Ui",
         type: "Frontend",
+        level:5
     },
 ]
