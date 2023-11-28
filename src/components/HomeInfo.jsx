@@ -7,10 +7,12 @@ const HomeInfo = ({ currentStage }) => {
     return (
       <h1 className='sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5'>
         Hi, I'm
-        <span className='font-semibold mx-2 text-white'>Muhammad</span>
+        <span className='font-semibold mx-2 text-white'>Muhammad (aka Salah)</span>
         👋
         <br />
         A Software Engineer lives South Korea 
+        <br />
+        <span className='font-semibold mx-2 text-white'>Slide island to see more~~</span>
       </h1>
     );
 

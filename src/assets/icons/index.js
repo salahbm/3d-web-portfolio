@@ -34,11 +34,13 @@ import nia from './nia.svg'
 import query from './query.svg'
 import swift from './swift.svg'
 import vite from './vite.svg'
+import jewelry from './jewelry.svg'
 import appwrite from './icon.svg'
 import threejs from './Appwrite.svg'
 import soundon from './soundon.png'
 import soundoff from './soundoff.png'
 import shadcn from './shadcn.png'
+import bsglobal from './bsglobal.png'
 
 export {
     css,
@@ -81,5 +83,7 @@ appwrite,
 threejs,
 shadcn,
 naver,
-nia
+nia,
+bsglobal,
+jewelry
 }

@@ -1,10 +1,10 @@
-import { car } from "../assets/icons";
+import { bsglobal, car, jewelry, nia } from "../assets/icons";
 
 export const experiences = [
     {
       title: "Full Stack Engineer (React Native, React JS, Next JS)",
       company_name: "Nia Labs Seoul",
-      icon: car,
+      icon: nia,
       iconBg: "#accbe1",
       date: "October 2022 - Present",
       points: [
@@ -16,7 +16,7 @@ export const experiences = [
     {
       title: "Full-Stack (Next JS, Firebase Stripe Next Auth)",
       company_name: "Mr. Joni Web USA",
-      icon: car,
+      icon: jewelry,
       iconBg: "pink",
       date: "Sep 2023 – Present(2024.01)",
       points: [
@@ -28,7 +28,7 @@ export const experiences = [
     {
         title: "Web Developer",
         company_name: "Bsglobal.uz",
-        icon: car,
+        icon: bsglobal,
         iconBg: "orange",
         date: "03.2020 - 12.2022",
         points: [
