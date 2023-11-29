@@ -9,6 +9,7 @@ import Sky from '../models/Sky';
 import sakura2 from '../assets/sakura2.mp3'
 import { soundoff, soundon } from "../assets/icons";
 import { Rocket } from "../models/Rocket";
+import Desert from "../models/Desert";
 const Home = () => {
   const audioRef = useRef(new Audio(sakura2))
   audioRef.current.volume=0.4
@@ -33,9 +34,6 @@ return [screenPosition, screenScale,rotation]
 const adjustBiplaneForScreenSize = () => {
   let screenScale, screenPosition;
 
-      // position={[-0, -1, 3]} 
-    // scale={[-0.9, 1, 1]} 
-  // If screen width is less than 768px, adjust the scale and position
   if (window.innerWidth < 768) {
     screenScale =[-0.9, 0.8, 0.8]
     screenPosition =[-0, -1, 3]
@@ -46,20 +44,56 @@ const adjustBiplaneForScreenSize = () => {
 
   return [screenScale, screenPosition];
 };
+const adjustRocketForScreenSize = () => {
+  let screenScale, screenPosition;
+
+  if (window.innerWidth < 768) {
+    screenScale =[-0.5, 0.5, 0.5]
+    screenPosition =[0, -1, 3]
+  } else {
+    screenScale = [-0.9, 1, 1]
+    screenPosition =[-0, -1, 3]
+  }
+
+  return [screenScale, screenPosition];
+};
 const [isPlaneScale, isPlanePosition] = adjustBiplaneForScreenSize();
+const [isRocketScale, isRocketPosition] = adjustRocketForScreenSize();
 const [isIslandPosition, isIslandScale,isIslandRotation]=adjustIslandForScreenSize()
 
+
 useEffect(()=>{
+
 if (isPlayingSong) {
   audioRef.current.play()
 }
 return()=>{
   audioRef.current.pause()
+
 }
 },[isPlayingSong])
 
+// const CommonLights = () => (
+//   <>
+//     <directionalLight position={[1, 1, 1]} intensity={2} />
+//     <ambientLight intensity={0.5} />
+//     <hemisphereLight skyColor="#b1e1ff" groundColor={'#333'} intensity={1} />
+//   </>
+// );
+
+// const MainCanvas = ({ isRotating, children }) => (
+//   <Canvas className={`w-full h-screen bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`} camera={{ near: 0.1, far: 1000 }}>
+//     <Suspense fallback={<Loader />}>
+//       <CommonLights />
+//       <Sky  />
+//       {children}
+//     </Suspense>
+//   </Canvas>
+// );
+
+
   return (
-<section className='w-full h-screen overflow-auto relative'>
+ <section className='w-full h-screen overflow-auto relative' >
     <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>  
 {currentStage && <HomeInfo currentStage={currentStage}/>}
       </div>
@@ -75,10 +109,11 @@ camera={{near:0.1, far:1000}}>
 <Island position={isIslandPosition} scale={isIslandScale} rotation={isIslandRotation} isRotating={isRotating} setIsRotating={setIsRotating} setCurrentStage={setCurrentStage}/>
 
 <FlyingPlane scale={isPlaneScale} position={isPlanePosition} isRotating={isRotating}        rotation={[0, 0.1, 0]}/>
-{/* <Rocket scale={isPlaneScale} position={isPlanePosition} isRotating={isRotating}        rotation={[0, 0.1, 0]}/> */}
+
 </Suspense>
 </Canvas>
-<Canvas className={`w-full h-screen bg-transparent ${isRotating ? 'cursor-grabbing': 'cursor-grab'}`}
+
+<Canvas    className={`w-full h-screen bg-transparent`}
 camera={{near:0.1, far:1000}}> 
 <Suspense fallback={<Loader/>}>
 
@@ -86,18 +121,22 @@ camera={{near:0.1, far:1000}}>
 <ambientLight intensity={0.5}/>
 <hemisphereLight skyColor='#b1e1ff' groundColor={'#333'} intensity={1}/>
 
-<Rocket scale={isPlaneScale} position={isPlanePosition} isRotating={isRotating}        rotation={[0, 0.1, 0]}/>
+<Sky isRotating={isRotating}/>
+<Desert/>
+<Rocket scale={isRocketScale} position={isRocketPosition} isRotating={isRotating}        rotation={[0, 0.1, 0]}/>
 </Suspense>
 </Canvas>
 
-{/* music */}
+
 <div className="absolute bottom-4 right-4 flex flex-col items-center ">
   <p className='blue-gradient_text  rotate-90 transform font-bold mb-10 lg:block hidden'>Sound {isPlayingSong ? 'On':'Off'}</p>
   <img src={isPlayingSong ? soundon: soundoff} alt="SoundOn" className="w-10 h-10 cursor-pointer object-contain" onClick={()=>setIsPlayingSong(!isPlayingSong)}/>
 </div>
 
-</section>
+</section> 
+
   )
 }
 
 export default Home
+

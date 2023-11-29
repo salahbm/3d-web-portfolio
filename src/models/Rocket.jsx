@@ -32,8 +32,6 @@ export function Rocket({  ...props }) {
 
   return (
     <mesh ref={ref} 
-    // position={[-0, -1, 3]} 
-    // scale={[-0.9, 1, 1]} 
 {...props}
 
     >
