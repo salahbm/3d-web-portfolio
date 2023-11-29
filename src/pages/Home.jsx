@@ -51,8 +51,8 @@ const adjustRocketForScreenSize = () => {
     screenScale =[-0.5, 0.5, 0.5]
     screenPosition =[0, -1, 3]
   } else {
-    screenScale = [-0.9, 0.9, 1]
-    screenPosition =[0, -0.9, 3]
+    screenScale = [-0.7, 0.7, 0.6]
+    screenPosition =[0, -0.87, 3]
   }
 
   return [screenScale, screenPosition];
