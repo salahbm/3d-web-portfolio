@@ -4,10 +4,10 @@
 
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import rocketScene from '../assets/3d/rocket.glb';
 
-export function Rocket({ setRocketStage, ...props }) {
+export function Rocket({ ...props }) {
     const ref = useRef();
     const { scene } = useGLTF(rocketScene);
 

@@ -7,22 +7,16 @@ import HomeInfo2 from "../components/HomeInfo2";
 import { FlyingPlane } from '../models/FlyingPlane';
 import Island from '../models/Island';
 import Sky from '../models/Sky';
-import sakura2 from '../assets/sakura2.mp3'
-import { soundoff, soundon } from "../assets/icons";
 import { Rocket } from "../models/Rocket";
 import Desert from "../models/Desert";
 import { Avatar } from "../models/Avatar";
 
 const Home = () => {
-  const audioRef = useRef(new Audio(sakura2))
-  audioRef.current.volume=0.4
-  audioRef.current.loop=true
 
   const [isRotating, setIsRotating] = useState(false)
-  const [isPlayingSong, setIsPlayingSong] = useState(false)
   const [currentStage, setCurrentStage] = useState(1)
-  const [rocketStage, setRocketStage] = useState(1)
-  console.log(`file: Home.jsx:22 ~ rocketStage:`, rocketStage)
+
+
 
 const adjustIslandForScreenSize =   ()=>{
 let screenScale=null;
@@ -68,7 +62,7 @@ const adjustAvatarForScreenSize = () => {
 
   if (window.innerWidth < 768) {
     screenScale =[0.3, 0.3, 0.3]
-    screenPosition =[0.4, -1, 3]
+    screenPosition =[0.25, -0.9, 3.68]
   } else {
     screenScale = [-0.5, 0.5, 0.5]
     screenPosition =[1.1, -0.9, 3.5]
@@ -80,18 +74,6 @@ const [avatarScale, avatarPosition]=adjustAvatarForScreenSize()
 const [isPlaneScale, isPlanePosition] = adjustBiplaneForScreenSize();
 const [isRocketScale, isRocketPosition] = adjustRocketForScreenSize();
 const [isIslandPosition, isIslandScale,isIslandRotation]=adjustIslandForScreenSize()
-
-
-useEffect(()=>{
-
-if (isPlayingSong) {
-  audioRef.current.play()
-}
-return()=>{
-  audioRef.current.pause()
-
-}
-},[isPlayingSong])
 
 
 
@@ -116,8 +98,8 @@ camera={{near:0.1, far:1000}}>
 </Suspense>
 </Canvas>
 
-<div className='absolute -bottom-[40%]  right-10 z-10 flex items-center justify-center'>  
-{rocketStage && <HomeInfo2 stage={rocketStage}/>}
+<div className='absolute -bottom-[24%] md:-bottom-[40%] right-0 md:right-10 z-10 flex items-center justify-center'>  
+<HomeInfo2 />
       </div>
 <Canvas    className={`w-full h-screen bg-transparent`}
 camera={{near:0.1, far:1000}}> 
@@ -131,15 +113,12 @@ camera={{near:0.1, far:1000}}>
  />
 <Sky isRotating={isRotating}/>
 <Desert/>
-<Rocket scale={isRocketScale} position={isRocketPosition}    setRocketStage={setRocketStage}     rotation={[0, 0.1, 0]}/>
+<Rocket scale={isRocketScale} position={isRocketPosition}        rotation={[0, 0.1, 0]}/>
 </Suspense>
 </Canvas>
 
 
-<div className="absolute bottom-4 right-4 flex flex-col items-center ">
-  <p className='blue-gradient_text  rotate-90 transform font-bold mb-10 lg:block hidden'>Sound {isPlayingSong ? 'On':'Off'}</p>
-  <img src={isPlayingSong ? soundon: soundoff} alt="SoundOn" className="w-10 h-10 cursor-pointer object-contain" onClick={()=>setIsPlayingSong(!isPlayingSong)}/>
-</div>
+
 
 </section> 
 

@@ -14,8 +14,7 @@ const HomeInfo2 = () => {
           👋
           <br />
           Your Full-stack Web & Mobile Magician
-          <br />
-          <span className='font-semibold mx-2 text-white'>Slide to explore the magic~~</span>
+        
         </h1>
       ),
       duration: 5000,
@@ -26,9 +25,7 @@ const HomeInfo2 = () => {
           <p className='font-medium sm:text-xl text-center'>
             Crafting digital experiences with a touch of elegance. <br /> Seasoned with expertise from diverse collaborations.
           </p>
-          <p className='font-medium sm:text-xl text-center mt-4'>
-            Ready to turn your ideas into reality!
-          </p>
+       
         </div>
       ),
       duration: 5000,
