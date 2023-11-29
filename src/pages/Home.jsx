@@ -3,6 +3,7 @@ import React, { Suspense, useState , useEffect, useRef} from 'react';
 import HomeInfo from '../components/HomeInfo';
 import Loader from '../components/Loader';
 import Bird from '../models/Bird';
+import HomeInfo2 from "../components/HomeInfo2";
 import { FlyingPlane } from '../models/FlyingPlane';
 import Island from '../models/Island';
 import Sky from '../models/Sky';
@@ -16,8 +17,11 @@ const Home = () => {
   audioRef.current.loop=true
 
   const [isRotating, setIsRotating] = useState(false)
-  const [isPlayingSong, setIsPlayingSong] = useState(true)
+  const [isPlayingSong, setIsPlayingSong] = useState(false)
   const [currentStage, setCurrentStage] = useState(1)
+  const [rocketStage, setRocketStage] = useState(null)
+  console.log(`file: Home.jsx:22 ~ rocketStage:`, rocketStage)
+
 const adjustIslandForScreenSize =   ()=>{
 let screenScale=null;
  let screenPosition=[0,-6.5, -43]
@@ -96,6 +100,9 @@ camera={{near:0.1, far:1000}}>
 </Suspense>
 </Canvas>
 
+<div className='absolute -bottom-[50%]  right-10 z-10 flex items-center justify-center'>  
+{rocketStage && <HomeInfo2 stage={rocketStage}/>}
+      </div>
 <Canvas    className={`w-full h-screen bg-transparent`}
 camera={{near:0.1, far:1000}}> 
 <Suspense fallback={<Loader/>}>
@@ -106,7 +113,8 @@ camera={{near:0.1, far:1000}}>
 
 <Sky isRotating={isRotating}/>
 <Desert/>
-<Rocket scale={isRocketScale} position={isRocketPosition} isRotating={isRotating}        rotation={[0, 0.1, 0]}/>
+
+<Rocket scale={isRocketScale} position={isRocketPosition} isRotating={isRotating}   setRocketStage={setRocketStage}     rotation={[0, 0.1, 0]}/>
 </Suspense>
 </Canvas>
 
