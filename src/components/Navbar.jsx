@@ -8,7 +8,7 @@ const Navbar = () => {
   audioRef.current.loop=true
 
   
-  const [isPlayingSong, setIsPlayingSong] = useState(true)
+  const [isPlayingSong, setIsPlayingSong] = useState(false)
   useEffect(()=>{
 
     if (isPlayingSong) {

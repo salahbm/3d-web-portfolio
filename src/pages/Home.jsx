@@ -63,7 +63,7 @@ const adjustAvatarForScreenSize = () => {
 
   if (window.innerWidth < 768) {
     screenScale =[0.3, 0.3, 0.3]
-    screenPosition =[0.25, -0.9, 3.68]
+    screenPosition =[0.25, -0.8, 3.68]
   } else {
     screenScale = [-0.5, 0.5, 0.5]
     screenPosition =[1.1, -0.9, 3.5]
@@ -108,7 +108,7 @@ useEffect(() => {
     const deltaY = startY.current - e.touches[0].clientY;
 
 
-    if (deltaY > 5) {
+    if (deltaY > 70) {
       handleScroll('up');
     } else if (deltaY < -5) {
       handleScroll('down');
@@ -152,7 +152,7 @@ camera={{near:0.1, far:1000}}>
         />
       </div>
 
-<div className='absolute -bottom-[24%] md:-bottom-[40%] right-0 md:right-10 z-10 flex items-center justify-center'>  
+<div className='absolute -bottom-[30%] md:-bottom-[40%] right-0 md:right-10 z-10 flex items-center justify-center'>  
 <HomeInfo2 />
       </div>
 <Canvas    className={`w-full h-screen bg-transparent`}
