@@ -9,8 +9,7 @@ const HomeInfo = ({ currentStage }) => {
         Hi, I'm
         <span className='font-semibold mx-2 text-white'>Muhammad (aka Salah)</span>
         👋
-        <br />
-        A Software Engineer lives South Korea 
+     
         <br />
         <span className='font-semibold mx-2 text-white'>Slide island to see more~~</span>
       </h1>

@@ -1,67 +1,104 @@
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { arrow } from '../assets/icons';
 
-import { arrow } from "../assets/icons";
+const HomeInfo2 = () => {
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
-const HomeInfo2 = ({ stage }) => {
-  if (stage === 0)
-    return (
-      <h1 className='sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5'>
-        Hi, I'm
-        <span className='font-semibold mx-2 text-white'>Muhammad (aka Salah)</span>
-        👋
-        <br />
-        A Software Engineer lives South Korea 
-        <br />
-        <span className='font-semibold mx-2 text-white'>Slide island to see more~~</span>
-      </h1>
-    );
+  const texts = [
+    {
+      jsx: (
+        <h1 className='sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5'>
+          Hi there! I'm
+          <span className='font-semibold mx-2 text-white'>Muhammad (aka Salah)</span>
+          👋
+          <br />
+          Your Full-stack Web & Mobile Magician
+          <br />
+          <span className='font-semibold mx-2 text-white'>Slide to explore the magic~~</span>
+        </h1>
+      ),
+      duration: 5000,
+    },
+    {
+      jsx: (
+        <div className='info-box'>
+          <p className='font-medium sm:text-xl text-center'>
+            Crafting digital experiences with a touch of elegance. <br /> Seasoned with expertise from diverse collaborations.
+          </p>
+          <p className='font-medium sm:text-xl text-center mt-4'>
+            Ready to turn your ideas into reality!
+          </p>
+        </div>
+      ),
+      duration: 5000,
+    },
+    {
+      jsx: (
+        <div className='info-box'>
+          <p className='font-medium text-center sm:text-xl'>
+            Leading projects to success, one innovation at a time. <br /> Witness the transformational journey!
+          </p>
+        </div>
+      ),
+      duration: 5000,
+    },
+    {
+      jsx: (
+        <div className='info-box'>
+          <p className='font-medium sm:text-xl text-center'>
+            Got a project in mind or seeking a coding ally? <br /> Let's bring your vision to life!
+          </p>
+          <Link to='/contact' className='neo-brutalism-white neo-btn'>
+            Let's talk
+            <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
+          </Link>
+        </div>
+      ),
+      duration: 5000,
+    },
+    {
+      jsx: (
+        <div className='info-box'>
+          <p className='font-medium text-center sm:text-xl'>
+            Transforming complex problems into elegant solutions. <br /> Innovation is my playground!
+          </p>
+        </div>
+      ),
+      duration: 5000,
+    },
+    {
+      jsx: (
+        <div className='info-box'>
+          <p className='font-medium text-center sm:text-xl'>
+            Coding is not just a job; it's a creative expression. <br /> Every line of code tells a story!
+          </p>
+        </div>
+      ),
+      duration: 5000,
+    },
+    {
+      jsx: (
+        <div className='info-box'>
+          <p className='font-medium text-center sm:text-xl'>
+            Embracing challenges with a passion for continuous learning. <br /> Let's push boundaries together!
+          </p>
+        </div>
+      ),
+      duration: 5000,
+    },
+  ];
 
-  if (stage === 1) {
-    return (
-      <div className='info-box'>
-        <p className='font-medium sm:text-xl text-center'>
-          Worked with many companies <br /> and picked up many skills along the way
-        </p>
 
-        <Link to='/about' className='neo-brutalism-white neo-btn'>
-          Learn more
-          <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
-        </Link>
-      </div>
-    );
-  }
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentTextIndex((prevIndex) => (prevIndex < texts.length - 1 ? prevIndex + 1 : 0));
+    }, texts[currentTextIndex].duration);
 
-  if (stage === 2) {
-    return (
-      <div className='info-box'>
-        <p className='font-medium text-center sm:text-xl'>
-          Led multiple projects to success over the years. <br /> Curious about the impact?
-        </p>
+    return () => clearInterval(intervalId);
+  }, [currentTextIndex, texts]);
 
-        <Link to='/projects' className='neo-brutalism-white neo-btn'>
-          Visit my portfolio
-          <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
-        </Link>
-      </div>
-    );
-  }
-
-  if (stage === 4) {
-    return (
-      <div className='info-box'>
-      <p className='font-medium sm:text-xl text-center'>
-        Need a project done or looking for a dev? <br/> I'm just a few keystrokes away
-      </p>
-
-      <Link to='/contact' className='neo-brutalism-white neo-btn'>
-        Let's talk
-        <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
-      </Link>
-    </div>
-    );
-  }
-
-  return null;
+  return texts[currentTextIndex].jsx;
 };
 
-export default HomeInfo2
+export default HomeInfo2;
