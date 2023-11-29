@@ -6,6 +6,9 @@ import { Canvas } from '@react-three/fiber'
 import Loader from '../components/Loader'
 import Alert from '../components/Alert'
 import useAlert from '../hook/useAlert';
+import { Link } from 'react-router-dom'
+import { socialLinks } from './../constant/skills';
+
 const Contacts = () => {
   const [form, setForm] = useState({name:'', email:'', message:''})
   const [isLoading, setIsLoading] = useState(false)
@@ -37,6 +40,7 @@ const handleSubmit = (e) => {
       },
       import.meta.env.VITE_APP_MAIL_ACCOUNT_PK
     )
+
 
     .then(
       () => {
@@ -76,6 +80,19 @@ const handleSubmit = (e) => {
 
     <div className='flex-1 min-w-[50%] flex flex-col'>
       <h1 className='head-text'>Get in Touch</h1>
+      <div className='group flex gap-3 justify-around items-center mt-10'>
+      {socialLinks.map((link, index) => (
+        <Link key={link.name} to={link.link} target='_blank' className='group'>
+          <img
+            src={link.iconUrl}
+            alt={link.name}
+            className={`w-6 h-6 object-contain transition-transform transform-gpu icon ${
+              index === 0 ||  index === 1  ||  index === 2 ? 'hover:scale-125' : ''
+            } hover:opacity-50`}
+          />
+        </Link>
+      ))}
+    </div>
 
       <form
         ref={formRef}

@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
 <header className='header'>
 <NavLink to={'/'} className='w-24 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md'>
-<p className='blue-gradient_text'> Muhammad</p>
+<p className='blue-gradient_text text-sm'> Muhammad</p>
 </NavLink>
 <nav className='flex text-sm md:text-lg gap-3 font-bold items-center justify-between '>
 
