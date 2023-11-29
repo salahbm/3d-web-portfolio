@@ -58,9 +58,7 @@ export const projects = [
               link: 'https://github.com/salahbm/selenium-demo',
     
        description:  [
-        'Led the development of a dynamic e-commerce platform for jewellery, ensuring a seamless shopping experience for a diverse customer base.',
-        'Designed and developed a responsive website for optimal performance on all devices.',
-        'Implemented strong security measures and secure payment methods to protect customer data and transactions, contributing to startup growth.',
+       'I developed a web application using Next.js and Selenium WebDriver that automates the process of creating blog posts on Naver, a popular blogging platform. The application allows users to input information, and at specified intervals, it utilizes Selenium WebDriver to interact with the Naver website and create blog posts seamlessly.',
       ],
     },
     {
