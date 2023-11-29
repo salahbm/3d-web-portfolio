@@ -8,7 +8,7 @@ const HomeInfo2 = () => {
   const texts = [
     {
       jsx: (
-        <h1 className='sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5'>
+        <h1 className='text-md md:text-xl  text-center neo-brutalism-blue py-2 px-8 text-white mx-5'>
           Hi there! I'm
           <span className='font-semibold mx-2 text-white'>Muhammad (aka Salah)</span>
           👋
@@ -22,20 +22,19 @@ const HomeInfo2 = () => {
     {
       jsx: (
         <div className='info-box'>
-          <p className='font-medium sm:text-xl text-center'>
+          <span className='font-medium text-md md:text-xl text-center'>
             Crafting digital experiences with a touch of elegance. <br /> Seasoned with expertise from diverse collaborations.
-          </p>
-       
-        </div>
+          </span>
+               </div>
       ),
       duration: 5000,
     },
     {
       jsx: (
         <div className='info-box'>
-          <p className='font-medium text-center sm:text-xl'>
+          <span className='font-medium text-center text-md md:text-xl'>
             Leading projects to success, one innovation at a time. <br /> Witness the transformational journey!
-          </p>
+          </span>
         </div>
       ),
       duration: 5000,
@@ -43,9 +42,9 @@ const HomeInfo2 = () => {
     {
       jsx: (
         <div className='info-box'>
-          <p className='font-medium sm:text-xl text-center'>
+          <span className='font-medium text-md md:text-xl text-center'>
             Got a project in mind or seeking a coding ally? <br /> Let's bring your vision to life!
-          </p>
+          </span>
           <Link to='/contact' className='neo-brutalism-white neo-btn'>
             Let's talk
             <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
@@ -57,9 +56,9 @@ const HomeInfo2 = () => {
     {
       jsx: (
         <div className='info-box'>
-          <p className='font-medium text-center sm:text-xl'>
+          <span className='font-medium text-center text-md md:text-xl'>
             Transforming complex problems into elegant solutions. <br /> Innovation is my playground!
-          </p>
+          </span>
         </div>
       ),
       duration: 5000,
@@ -67,9 +66,9 @@ const HomeInfo2 = () => {
     {
       jsx: (
         <div className='info-box'>
-          <p className='font-medium text-center sm:text-xl'>
+          <span className='font-medium text-center text-md md:text-xl'>
             Coding is not just a job; it's a creative expression. <br /> Every line of code tells a story!
-          </p>
+          </span>
         </div>
       ),
       duration: 5000,
@@ -77,9 +76,9 @@ const HomeInfo2 = () => {
     {
       jsx: (
         <div className='info-box'>
-          <p className='font-medium text-center sm:text-xl'>
+          <span className='font-medium text-center text-md md:text-xl'>
             Embracing challenges with a passion for continuous learning. <br /> Let's push boundaries together!
-          </p>
+          </span>
         </div>
       ),
       duration: 5000,
