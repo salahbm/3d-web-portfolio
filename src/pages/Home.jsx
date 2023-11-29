@@ -10,6 +10,7 @@ import Sky from '../models/Sky';
 import { Rocket } from "../models/Rocket";
 import Desert from "../models/Desert";
 import { Avatar } from "../models/Avatar";
+import { arrow } from "../assets/icons";
 
 const Home = () => {
 
@@ -76,9 +77,54 @@ const [isRocketScale, isRocketPosition] = adjustRocketForScreenSize();
 const [isIslandPosition, isIslandScale,isIslandRotation]=adjustIslandForScreenSize()
 
 
+const containerRef = useRef(null);
+const [scrollY, setScrollY] = useState(0);
+const startY = useRef(0); // Add this line to create a ref for startY
 
+const handleScroll = (direction) => {
+  const container = containerRef.current;
+  const scrollHeight = container.scrollHeight - container.clientHeight;
+  const screenHeight = window.innerHeight;
+  let newScrollY;
+
+  if (direction === 'up') {
+    newScrollY = Math.max(0, scrollY - screenHeight);
+  } else {
+    newScrollY = Math.min(scrollHeight, scrollY + screenHeight);
+  }
+
+  container.scrollTo(0, newScrollY);
+  setScrollY(newScrollY);
+};
+
+useEffect(() => {
+  const container = containerRef.current;
+
+  const handleTouchStart = (e) => {
+    startY.current = e.touches[0].clientY;
+  };
+
+  const handleTouchMove = (e) => {
+    const deltaY = startY.current - e.touches[0].clientY;
+
+
+    if (deltaY > 5) {
+      handleScroll('up');
+    } else if (deltaY < -5) {
+      handleScroll('down');
+    }
+  };
+
+  container.addEventListener('touchstart', handleTouchStart);
+  container.addEventListener('touchmove', handleTouchMove);
+
+  return () => {
+    container.removeEventListener('touchstart', handleTouchStart);
+    container.removeEventListener('touchmove', handleTouchMove);
+  };
+}, [handleScroll]);
   return (
- <section className='w-full h-screen overflow-auto relative' >
+ <section className='w-full h-screen lg:overflow-auto overflow-hidden relative'  ref={containerRef} >
     <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>  
 {currentStage && <HomeInfo currentStage={currentStage}/>}
       </div>
@@ -97,6 +143,14 @@ camera={{near:0.1, far:1000}}>
 
 </Suspense>
 </Canvas>
+<div className='fixed bottom-4 left-[50%] flex space-x-2  lg:hidden'>
+        <img
+          src={arrow}
+          alt="ScrollButton"
+          className={`md:w-10 md:h-10 w-7 h-7 cursor-pointer ${scrollY === 0 ? 'rotate-90' : '-rotate-90'} object-contain`}
+          onClick={() => (scrollY === 0 ? handleScroll('down') : handleScroll('up'))}
+        />
+      </div>
 
 <div className='absolute -bottom-[24%] md:-bottom-[40%] right-0 md:right-10 z-10 flex items-center justify-center'>  
 <HomeInfo2 />
