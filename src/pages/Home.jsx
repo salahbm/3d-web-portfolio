@@ -8,6 +8,7 @@ import Island from '../models/Island';
 import Sky from '../models/Sky';
 import sakura2 from '../assets/sakura2.mp3'
 import { soundoff, soundon } from "../assets/icons";
+import { Rocket } from "../models/Rocket";
 const Home = () => {
   const audioRef = useRef(new Audio(sakura2))
   audioRef.current.volume=0.4
@@ -74,6 +75,18 @@ camera={{near:0.1, far:1000}}>
 <Island position={isIslandPosition} scale={isIslandScale} rotation={isIslandRotation} isRotating={isRotating} setIsRotating={setIsRotating} setCurrentStage={setCurrentStage}/>
 
 <FlyingPlane scale={isPlaneScale} position={isPlanePosition} isRotating={isRotating}        rotation={[0, 0.1, 0]}/>
+{/* <Rocket scale={isPlaneScale} position={isPlanePosition} isRotating={isRotating}        rotation={[0, 0.1, 0]}/> */}
+</Suspense>
+</Canvas>
+<Canvas className={`w-full h-screen bg-transparent ${isRotating ? 'cursor-grabbing': 'cursor-grab'}`}
+camera={{near:0.1, far:1000}}> 
+<Suspense fallback={<Loader/>}>
+
+<directionalLight position={[1,1,1]} intensity={2}/>
+<ambientLight intensity={0.5}/>
+<hemisphereLight skyColor='#b1e1ff' groundColor={'#333'} intensity={1}/>
+
+<Rocket scale={isPlaneScale} position={isPlanePosition} isRotating={isRotating}        rotation={[0, 0.1, 0]}/>
 </Suspense>
 </Canvas>
 
