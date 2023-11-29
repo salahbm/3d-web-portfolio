@@ -7,7 +7,7 @@ const Desert = () => {
     const ref = useRef()
     const { scene, animations } = useGLTF(desertScene);
     const { actions } = useAnimations(animations, ref);
-    console.log(`file: Desert.jsx:9 ~ actions:`, actions)
+   
 
     useEffect(() => {
         const flyAction = actions.Animation;

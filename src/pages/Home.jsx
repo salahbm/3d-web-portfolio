@@ -51,8 +51,8 @@ const adjustRocketForScreenSize = () => {
     screenScale =[-0.5, 0.5, 0.5]
     screenPosition =[0, -1, 3]
   } else {
-    screenScale = [-0.9, 1, 1]
-    screenPosition =[-0, -1, 3]
+    screenScale = [-0.9, 0.9, 1]
+    screenPosition =[0, -0.9, 3]
   }
 
   return [screenScale, screenPosition];
@@ -73,23 +73,6 @@ return()=>{
 }
 },[isPlayingSong])
 
-// const CommonLights = () => (
-//   <>
-//     <directionalLight position={[1, 1, 1]} intensity={2} />
-//     <ambientLight intensity={0.5} />
-//     <hemisphereLight skyColor="#b1e1ff" groundColor={'#333'} intensity={1} />
-//   </>
-// );
-
-// const MainCanvas = ({ isRotating, children }) => (
-//   <Canvas className={`w-full h-screen bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`} camera={{ near: 0.1, far: 1000 }}>
-//     <Suspense fallback={<Loader />}>
-//       <CommonLights />
-//       <Sky  />
-//       {children}
-//     </Suspense>
-//   </Canvas>
-// );
 
 
   return (

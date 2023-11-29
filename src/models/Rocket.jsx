@@ -10,37 +10,43 @@ import { useAnimations, useGLTF } from "@react-three/drei";
 import React, { useEffect, useRef } from "react";
 import rocketScene from '../assets/3d/rocket.glb';
 import { useFrame } from "@react-three/fiber";
-export function Rocket({  ...props }) {
-  const ref = useRef();
-  const { scene, animations } = useGLTF(rocketScene);
-  const { actions } = useAnimations(animations, ref);
-  console.log(`file: Rocket.jsx:17 ~ actions:`, actions)
+
+export function Rocket({ ...props }) {
+    const ref = useRef();
+    const { scene, animations } = useGLTF(rocketScene);
+    const { actions } = useAnimations(animations, ref);
+  
+    const stages = [0.2];
+    let currentY = -2;
   
     useEffect(() => {
-      const flyAction = actions.NaveR;
-      flyAction.play()
-    }, []);
-    
-    useFrame(({ clock }) => {
-      const initialY = ref.current.position.y;
-      const newY = Math.sin(clock.elapsedTime) * 0.002 + initialY;
-      ref.current.position.y = newY;
-    
- 
-    });
-    
-
-  return (
-    <mesh ref={ref} 
-{...props}
-
-    >
-      // use the primitive element when you want to directly embed a complex 3D
-      model or scene
-      <primitive object={scene} />
-    </mesh>
+      const currentStage = stages.findIndex(stage => currentY <= stage);
+      if (currentStage !== -1) {
+        console.log('Current Stage:', currentStage * 10);
+        if (currentY >= stages[stages.length - 1]) {
+          const flyAction = actions.NaveR;
+          flyAction.reset().play();
+          currentY = 0; // Reset to the bottom after playing the animation
+        }
+      }
+    }, [currentY, stages, actions]);
   
-  );
-}
-
+    useFrame(() => {
+      // Move the rocket steadily up the Y-axis
+      currentY += 0.01; // Adjust the speed as needed
+  
+      // Clamp the Y position to 70% of the screen
+      if (currentY > stages[stages.length - 1]) {
+        currentY = 0;
+      }
+  
+      ref.current.position.y = currentY;
+    });
+  
+    return (
+      <mesh ref={ref} {...props}>
+        <primitive object={scene} />
+      </mesh>
+    );
+  }
 
