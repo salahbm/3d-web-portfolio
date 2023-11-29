@@ -124,7 +124,7 @@ useEffect(() => {
   };
 }, [handleScroll]);
   return (
- <section className='w-full h-screen lg:overflow-auto overflow-hidden relative'  ref={containerRef} >
+ <section className='w-full h-screen overflow-hidden relative'  ref={containerRef} >
     <div className='absolute top-24 left-0 right-0 z-10 flex items-center justify-center'>  
 {currentStage && <HomeInfo currentStage={currentStage}/>}
       </div>
@@ -143,14 +143,15 @@ camera={{near:0.1, far:1000}}>
 
 </Suspense>
 </Canvas>
-<div className='fixed bottom-4 left-[50%] flex space-x-2  lg:hidden'>
-        <img
-          src={arrow}
-          alt="ScrollButton"
-          className={`md:w-10 md:h-10 w-7 h-7 cursor-pointer ${scrollY === 0 ? 'rotate-90' : '-rotate-90'} object-contain`}
-          onClick={() => (scrollY === 0 ? handleScroll('down') : handleScroll('up'))}
-        />
-      </div>
+<div className='fixed bottom-4 left-[50%] flex space-x-2 ' style={{ zIndex: 9999 }}>
+  <img
+    src={arrow}
+    alt="ScrollButton"
+    className={`md:w-10 md:h-10 w-7 h-7 cursor-pointer ${scrollY === 0 ? 'rotate-90' : '-rotate-90'} object-contain`}
+    onClick={() => (scrollY === 0 ? handleScroll('down') : handleScroll('up'))}
+  />
+</div>
+
 
 <div className='absolute -bottom-[30%] md:-bottom-[40%] right-0 md:right-10 z-10 flex items-center justify-center'>  
 <HomeInfo2 />
