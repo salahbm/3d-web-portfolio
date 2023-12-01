@@ -175,7 +175,7 @@ import islandScene from "../assets/3d/island.glb";
 
   return (
 
-    <a.group ref={islandRef} {...props}>
+    <a.group ref={islandRef} {...props} renderOrder={1}>
       <mesh
         geometry={nodes.polySurface944_tree_body_0.geometry}
         material={materials.PaletteMaterial001}

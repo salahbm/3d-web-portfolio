@@ -175,7 +175,7 @@ import islandScene from "../assets/3d/island2.glb";
 
   return (
 
-    <a.group ref={islandRef} {...props}>
+    <a.group ref={islandRef} {...props} renderOrder={1}>
       <group>
        <mesh
           castShadow

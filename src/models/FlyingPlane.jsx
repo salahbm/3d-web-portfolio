@@ -35,7 +35,8 @@ export function FlyingPlane({ isRotating, ...props }) {
   return (
     <mesh ref={ref} 
     // position={[-0, -1, 3]} 
-    // scale={[-0.9, 1, 1]} 
+    // scale={[-0.9, 1, 1]}
+renderOrder={2}
 {...props}
 
     >
