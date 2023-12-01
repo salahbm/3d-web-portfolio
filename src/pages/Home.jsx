@@ -12,6 +12,7 @@ import Desert from "../models/Desert";
 import { Avatar } from "../models/Avatar";
 import { arrow, swap } from "../assets/icons";
 import Island2 from "../models/Island2";
+import Bird2 from "../models/Bird2";
 
 const Home = () => {
 
@@ -152,7 +153,8 @@ camera={{near:0.1, far:1000}}>
 <directionalLight position={[1,1,1]} intensity={2}/>
 <ambientLight intensity={0.5}/>
 <hemisphereLight skyColor='#b1e1ff' groundColor={'#333'} intensity={1}/>
-<Bird/>
+{/* <Bird/> */}
+<Bird2/>
 <Sky isRotating={isRotating}/>
 {swapIslands ==='foxIsland' ? <Island position={isIslandPosition} scale={isIslandScale} rotation={isIslandRotation} isRotating={isRotating} setIsRotating={setIsRotating} setCurrentStage={setCurrentStage}/> :
 <Island2 position={isIsland2Position} scale={isIsland2Scale} rotation={isIsland2Rotation} isRotating={isRotating} setIsRotating={setIsRotating} setCurrentStage={setCurrentStage}/>
