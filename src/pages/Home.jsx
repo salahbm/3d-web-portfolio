@@ -18,6 +18,7 @@ const Home = () => {
 
   const [isRotating, setIsRotating] = useState(false)
   const [currentStage, setCurrentStage] = useState(1)
+
 const [swapIslands, setSwapIslands] = useState('foxIsland')
 
 const adjustIslandForScreenSize =()=>{

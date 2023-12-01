@@ -133,6 +133,7 @@ import islandScene from "../assets/3d/island2.glb";
   
 
   // This function is called on each frame update
+  // This function is called on each frame update
   useFrame(() => {
     // If not rotating, apply damping to slow down the rotation (smoothly)
     if (!isRotating) {
@@ -155,16 +156,16 @@ import islandScene from "../assets/3d/island2.glb";
 
       // Set the current stage based on the island's orientation
       switch (true) {
-        case normalizedRotation >= 5.45 && normalizedRotation <= 5.85:
+        case normalizedRotation >= 5.45 && normalizedRotation <= 7:
           setCurrentStage(4);
           break;
-        case normalizedRotation >= 0.85 && normalizedRotation <= 1.3:
+        case normalizedRotation >= 0.85 && normalizedRotation <= 2:
           setCurrentStage(3);
           break;
-        case normalizedRotation >= 2.4 && normalizedRotation <= 2.6:
+        case normalizedRotation >= 2.4 && normalizedRotation <= 3.7:
           setCurrentStage(2);
           break;
-        case normalizedRotation >= 4.25 && normalizedRotation <= 4.75:
+        case normalizedRotation >= 4.25 && normalizedRotation <= 5.2:
           setCurrentStage(1);
           break;
         default:
