@@ -21,7 +21,7 @@ const [swapIslands, setSwapIslands] = useState('diamond')
 
 const adjustIslandForScreenSize =()=>{
   let screenScale=null;
-   let screenPosition=[-0.1,-1, -3]
+   let screenPosition=[-0.1,-1.5, -4]
    let rotation = [0.04, 0,0 ]
   if (window.innerWidth <768 ) {
       screenScale=[ 0.14, 0.14,0.14]
@@ -34,14 +34,14 @@ const adjustIslandForScreenSize =()=>{
   } 
 const adjustIsland2ForScreenSize =()=>{
 let screenScale=null;
- let screenPosition=[-0.7,-1, -2]
+ let screenPosition=[-0.7,-1, -3.66]
  let rotation = [0.09, -1,0 ]
 if (window.innerWidth <768 ) {
     screenScale=[ 0.0055, 0.005,0.0055]
 
     
 }else{
-    screenScale=[ 0.0075, 0.008,0.0075]
+    screenScale=[ 0.0075, 0.009,0.0075]
 }
 return [screenPosition, screenScale,rotation]
 }  
@@ -152,7 +152,7 @@ camera={{near:0.1, far:1000}}>
 <directionalLight position={[1,1,1]} intensity={2}/>
 <ambientLight intensity={0.5}/>
 <hemisphereLight skyColor='#b1e1ff' groundColor={'#333'} intensity={1}/>
-{/* <Bird/> */}
+<Bird/>
 <Sky isRotating={isRotating}/>
 {swapIslands ==='foxIsland' ? <Island position={isIslandPosition} scale={isIslandScale} rotation={isIslandRotation} isRotating={isRotating} setIsRotating={setIsRotating} setCurrentStage={setCurrentStage}/> :
 <Island2 position={isIsland2Position} scale={isIsland2Scale} rotation={isIsland2Rotation} isRotating={isRotating} setIsRotating={setIsRotating} setCurrentStage={setCurrentStage}/>
