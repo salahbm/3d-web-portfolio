@@ -165,16 +165,16 @@ camera={{near:0.1, far:1000}}>
 
 </Suspense>
 </Canvas>
-<div className='fixed bottom-4 left-[45%] translate-[50%] flex space-x-2 ' style={{ zIndex: 9999 }}>
+<div className='fixed bottom-4 md:left-[45%] left-[38%] translate-[50%] flex space-x-2' style={{ zIndex: 9999 }}>
   <img
     src={swap}
     alt="swap"
-
-    className={`md:w-10 md:h-10 w-7 h-7 cursor-pointer  object-contain text-blue-500`}
+    className={`md:w-10 md:h-10 w-7 h-7 cursor-pointer object-contain text-blue-500`}
     onClick={() => swapIslands === 'diamond' ? setSwapIslands('foxIsland') : setSwapIslands('diamond')}
   />
 </div>
-<div className='fixed bottom-4 left-[49%] translate-[50%] flex space-x-2 ' style={{ zIndex: 9999 }}>
+
+<div className='fixed bottom-4 md:left-[49%] left-[47%] translate-[50%] flex space-x-2' style={{ zIndex: 9999 }}>
   <img
     src={arrow}
     alt="ScrollButton"
@@ -182,6 +182,7 @@ camera={{near:0.1, far:1000}}>
     onClick={() => (scrollY === 0 ? handleScroll('down') : handleScroll('up'))}
   />
 </div>
+
 
 
 <div className='absolute -bottom-[30%] md:-bottom-[40%] right-0 md:right-10 z-10 flex items-center justify-center'>  
