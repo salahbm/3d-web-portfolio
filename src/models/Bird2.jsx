@@ -27,34 +27,30 @@ const Bird2=()=> {
     // Check if the bird reached a certain endpoint relative to the camera
     if (birdRef.current.position.x > camera.position.x + 10) {
       // Change direction to backward and rotate the bird 180 degrees on the y-axis
-      birdRef.current.rotation.x = Math.PI;
-    } else if (birdRef.current.position.y < camera.position.x - 10) {
+      birdRef.current.rotation.y = Math.PI;
+    } else if (birdRef.current.position.x < camera.position.x - 10) {
       // Change direction to forward and reset the bird's rotation
-      birdRef.current.rotation.x = 0;
+      birdRef.current.rotation.y = 0;
     }
 
     // Update the X and Z positions based on the direction
-    if (birdRef.current.rotation.x === 0) {
+    if (birdRef.current.rotation.y === 0) {
       // Moving forward
-      birdRef.current.position.y -= 0.01;
+      birdRef.current.position.x -= 0.01;
       birdRef.current.position.z += 0.01;
     } else {
       // Moving backward
-      birdRef.current.position.y += 0.01;
+      birdRef.current.position.x += 0.01;
       birdRef.current.position.z -= 0.01;
     }
   });
   
   
   
-  
-  
 
   return (
     // to create and display 3D objects
-    <mesh ref={birdRef} position={[5.5, 3, -1]} scale={[0.9, 0.9, 0.9]} rotation={[1.8,-1.5,1.2]}>
-      // use the primitive element when you want to directly embed a complex 3D
-      model or scene
+    <mesh ref={birdRef} position={[-5, 2, -1]}  scale={[0.9, 0.9, 0.9]} rotation={[-1.2,2,1]}>
       <primitive object={scene} />
     </mesh>
   );
