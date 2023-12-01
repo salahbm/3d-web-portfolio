@@ -8,6 +8,7 @@ import mongodb from './mongodb.svg'
 import motion from './motion.svg'
 import mui from './mui.svg'
 import nextjs from './nextjs.svg'
+import swap from './swap.svg'
 import nodejs from './nodejs.svg'
 import react from './react.svg'
 import redux from './redux.svg'
@@ -85,5 +86,6 @@ shadcn,
 naver,
 nia,
 bsglobal,
-jewelry
+jewelry,
+swap
 }

@@ -10,17 +10,29 @@ import Sky from '../models/Sky';
 import { Rocket } from "../models/Rocket";
 import Desert from "../models/Desert";
 import { Avatar } from "../models/Avatar";
-import { arrow } from "../assets/icons";
+import { arrow, swap } from "../assets/icons";
 import Island2 from "../models/Island2";
 
 const Home = () => {
 
   const [isRotating, setIsRotating] = useState(false)
   const [currentStage, setCurrentStage] = useState(1)
+const [swapIslands, setSwapIslands] = useState('diamond')
 
-
-
-const adjustIslandForScreenSize =   ()=>{
+const adjustIslandForScreenSize =()=>{
+  let screenScale=null;
+   let screenPosition=[-0.1,-1, -3]
+   let rotation = [0.04, 0,0 ]
+  if (window.innerWidth <768 ) {
+      screenScale=[ 0.14, 0.14,0.14]
+  
+      
+  }else{
+      screenScale=[ 0.19, 0.19,0.19]
+  }
+  return [screenPosition, screenScale,rotation]
+  } 
+const adjustIsland2ForScreenSize =()=>{
 let screenScale=null;
  let screenPosition=[-0.7,-1, -2]
  let rotation = [0.09, -1,0 ]
@@ -33,6 +45,9 @@ if (window.innerWidth <768 ) {
 }
 return [screenPosition, screenScale,rotation]
 }  
+
+
+
 const adjustBiplaneForScreenSize = () => {
   let screenScale, screenPosition;
 
@@ -75,6 +90,7 @@ const adjustAvatarForScreenSize = () => {
 const [avatarScale, avatarPosition]=adjustAvatarForScreenSize()
 const [isPlaneScale, isPlanePosition] = adjustBiplaneForScreenSize();
 const [isRocketScale, isRocketPosition] = adjustRocketForScreenSize();
+const [isIsland2Position, isIsland2Scale,isIsland2Rotation]=adjustIsland2ForScreenSize()
 const [isIslandPosition, isIslandScale,isIslandRotation]=adjustIslandForScreenSize()
 
 
@@ -138,14 +154,22 @@ camera={{near:0.1, far:1000}}>
 <hemisphereLight skyColor='#b1e1ff' groundColor={'#333'} intensity={1}/>
 <Bird/>
 <Sky isRotating={isRotating}/>
-{/* <Island position={isIslandPosition} scale={isIslandScale} rotation={isIslandRotation} isRotating={isRotating} setIsRotating={setIsRotating} setCurrentStage={setCurrentStage}/> */}
-<Island2 position={isIslandPosition} scale={isIslandScale} rotation={isIslandRotation} isRotating={isRotating} setIsRotating={setIsRotating} setCurrentStage={setCurrentStage}/>
-
+{swapIslands ==='foxIsland' ? <Island position={isIslandPosition} scale={isIslandScale} rotation={isIslandRotation} isRotating={isRotating} setIsRotating={setIsRotating} setCurrentStage={setCurrentStage}/> :
+<Island2 position={isIsland2Position} scale={isIsland2Scale} rotation={isIsland2Rotation} isRotating={isRotating} setIsRotating={setIsRotating} setCurrentStage={setCurrentStage}/>
+}
 <FlyingPlane scale={isPlaneScale} position={isPlanePosition} isRotating={isRotating}        rotation={[0, 0.1, 0]}/>
 
 </Suspense>
 </Canvas>
-<div className='fixed bottom-4 left-[50%] flex space-x-2 ' style={{ zIndex: 9999 }}>
+<div className='fixed bottom-4 left-[40%] translate-[50%] flex space-x-2 ' style={{ zIndex: 9999 }}>
+  <img
+    src={swap}
+    alt="swap"
+    className={`md:w-10 md:h-10 w-7 h-7 cursor-pointer  object-contain text-blue-500`}
+    onClick={() => swapIslands === 'diamond' ? setSwapIslands('foxIsland') : setSwapIslands('diamond')}
+  />
+</div>
+<div className='fixed bottom-4 left-[50%] translate-[50%] flex space-x-2 ' style={{ zIndex: 9999 }}>
   <img
     src={arrow}
     alt="ScrollButton"
