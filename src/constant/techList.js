@@ -3,6 +3,7 @@ import {
     aws,
     css,
     express,
+    figma,
     firebase,
     git,
     github,
@@ -111,7 +112,7 @@ export const Back=[    {
     level:2.5
 },
 {
-    imageUrl: appwrite,
+    imageUrl: threejs,
     name: "Appwrite",
     type: "Backend",
     level:4
@@ -145,7 +146,7 @@ export const Front=[      {
     level:4
 },
 {
-    imageUrl:threejs,
+    imageUrl:appwrite,
     name: "Three.js",
     type: "Frontend",
     level:3
@@ -156,7 +157,7 @@ export const Front=[      {
     type: "Frontend",
     level:5
 },  {
-    imageUrl: typescript,
+    imageUrl: react,
     name: "React-Native",
     type: "Frontend",
     level:5
@@ -175,7 +176,7 @@ export const UI=[
         level:4
     },
     {
-        imageUrl: tailwindcss,
+        imageUrl: figma,
         name: "Figma",
         type: "Frontend",
         level:4

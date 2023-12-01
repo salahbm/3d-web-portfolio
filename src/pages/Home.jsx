@@ -18,7 +18,7 @@ const Home = () => {
 
   const [isRotating, setIsRotating] = useState(false)
   const [currentStage, setCurrentStage] = useState(1)
-const [swapIslands, setSwapIslands] = useState('diamond')
+const [swapIslands, setSwapIslands] = useState('foxIsland')
 
 const adjustIslandForScreenSize =()=>{
   let screenScale=null;
@@ -164,15 +164,16 @@ camera={{near:0.1, far:1000}}>
 
 </Suspense>
 </Canvas>
-<div className='fixed bottom-4 left-[40%] translate-[50%] flex space-x-2 ' style={{ zIndex: 9999 }}>
+<div className='fixed bottom-4 left-[45%] translate-[50%] flex space-x-2 ' style={{ zIndex: 9999 }}>
   <img
     src={swap}
     alt="swap"
+
     className={`md:w-10 md:h-10 w-7 h-7 cursor-pointer  object-contain text-blue-500`}
     onClick={() => swapIslands === 'diamond' ? setSwapIslands('foxIsland') : setSwapIslands('diamond')}
   />
 </div>
-<div className='fixed bottom-4 left-[50%] translate-[50%] flex space-x-2 ' style={{ zIndex: 9999 }}>
+<div className='fixed bottom-4 left-[49%] translate-[50%] flex space-x-2 ' style={{ zIndex: 9999 }}>
   <img
     src={arrow}
     alt="ScrollButton"
