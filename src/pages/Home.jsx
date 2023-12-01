@@ -25,7 +25,7 @@ let screenScale=null;
  let screenPosition=[-0.7,-1, -2]
  let rotation = [0.09, -1,0 ]
 if (window.innerWidth <768 ) {
-    screenScale=[ 0.6,0.6,0.6]
+    screenScale=[ 0.0055, 0.005,0.0055]
 
     
 }else{
