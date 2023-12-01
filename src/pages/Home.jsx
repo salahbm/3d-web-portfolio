@@ -11,6 +11,7 @@ import { Rocket } from "../models/Rocket";
 import Desert from "../models/Desert";
 import { Avatar } from "../models/Avatar";
 import { arrow } from "../assets/icons";
+import Island2 from "../models/Island2";
 
 const Home = () => {
 
@@ -21,14 +22,14 @@ const Home = () => {
 
 const adjustIslandForScreenSize =   ()=>{
 let screenScale=null;
- let screenPosition=[0,-6.5, -43]
- let rotation = [0.09, 0,0 ]
+ let screenPosition=[-0.7,-1, -2]
+ let rotation = [0.09, -1,0 ]
 if (window.innerWidth <768 ) {
     screenScale=[ 0.6,0.6,0.6]
 
     
 }else{
-    screenScale=[ 1, 1,1]
+    screenScale=[ 0.0075, 0.008,0.0075]
 }
 return [screenPosition, screenScale,rotation]
 }  
@@ -137,7 +138,8 @@ camera={{near:0.1, far:1000}}>
 <hemisphereLight skyColor='#b1e1ff' groundColor={'#333'} intensity={1}/>
 <Bird/>
 <Sky isRotating={isRotating}/>
-<Island position={isIslandPosition} scale={isIslandScale} rotation={isIslandRotation} isRotating={isRotating} setIsRotating={setIsRotating} setCurrentStage={setCurrentStage}/>
+{/* <Island position={isIslandPosition} scale={isIslandScale} rotation={isIslandRotation} isRotating={isRotating} setIsRotating={setIsRotating} setCurrentStage={setCurrentStage}/> */}
+<Island2 position={isIslandPosition} scale={isIslandScale} rotation={isIslandRotation} isRotating={isRotating} setIsRotating={setIsRotating} setCurrentStage={setCurrentStage}/>
 
 <FlyingPlane scale={isPlaneScale} position={isPlanePosition} isRotating={isRotating}        rotation={[0, 0.1, 0]}/>
 
