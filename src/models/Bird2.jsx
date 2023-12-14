@@ -5,7 +5,7 @@ import { useAnimations, useGLTF } from "@react-three/drei";
 import birdScene from "../assets/3d/phoenix.glb";
 
 // 3D Model from: https://sketchfab.com/3d-models/phoenix-bird-844ba0cf144a413ea92c779f18912042
-const Bird2=()=> {
+const Bird2 = () => {
   const birdRef = useRef();
 
   // Load the 3D model and animations from the provided GLTF file
@@ -44,18 +44,18 @@ const Bird2=()=> {
       birdRef.current.position.z -= 0.01;
     }
   });
-  
-  
-  
 
   return (
     // to create and display 3D objects
-    <mesh ref={birdRef} position={[-5, 2, -1]}  scale={[0.9, 0.9, 0.9]} rotation={[-1.2,2,1]}>
+    <mesh
+      ref={birdRef}
+      position={[-5, 2, -1]}
+      scale={[0.9, 0.9, 0.9]}
+      rotation={[-1.2, 2, 1]}
+    >
       <primitive object={scene} />
     </mesh>
   );
-}
+};
 
-
-
-export default Bird2
+export default Bird2;

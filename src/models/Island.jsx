@@ -16,13 +16,13 @@ import { useFrame, useThree } from "@react-three/fiber";
 
 import islandScene from "../assets/3d/island.glb";
 
- const Island =({
+const Island = ({
   isRotating,
   setIsRotating,
   setCurrentStage,
   currentFocusPoint,
   ...props
-}) =>{
+}) => {
   const islandRef = useRef();
   // Get access to the Three.js renderer and viewport
   const { gl, viewport } = useThree();
@@ -106,31 +106,30 @@ import islandScene from "../assets/3d/island.glb";
     canvas.addEventListener("pointerdown", handlePointerDown);
     canvas.addEventListener("pointerup", handlePointerUp);
     canvas.addEventListener("pointermove", handlePointerMove);
-  
+
     // Add touch event listeners
     canvas.addEventListener("touchstart", handlePointerDown);
     canvas.addEventListener("touchend", handlePointerUp);
     canvas.addEventListener("touchmove", handlePointerMove);
-  
+
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("keyup", handleKeyUp);
-  
+
     // Remove event listeners when component unmounts
     return () => {
       canvas.removeEventListener("pointerdown", handlePointerDown);
       canvas.removeEventListener("pointerup", handlePointerUp);
       canvas.removeEventListener("pointermove", handlePointerMove);
-  
+
       // Remove touch event listeners
       canvas.removeEventListener("touchstart", handlePointerDown);
       canvas.removeEventListener("touchend", handlePointerUp);
       canvas.removeEventListener("touchmove", handlePointerMove);
-  
+
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("keyup", handleKeyUp);
     };
   }, [gl, handlePointerDown, handlePointerUp, handlePointerMove]);
-  
 
   // This function is called on each frame update
   useFrame(() => {
@@ -148,7 +147,6 @@ import islandScene from "../assets/3d/island.glb";
     } else {
       // When rotating, determine the current stage based on island's orientation
       const rotation = islandRef.current.rotation.y;
-
 
       const normalizedRotation =
         ((rotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
@@ -174,8 +172,7 @@ import islandScene from "../assets/3d/island.glb";
   });
 
   return (
-
-    <a.group ref={islandRef} {...props} >
+    <a.group ref={islandRef} {...props}>
       <mesh
         geometry={nodes.polySurface944_tree_body_0.geometry}
         material={materials.PaletteMaterial001}
@@ -206,5 +203,5 @@ import islandScene from "../assets/3d/island.glb";
       />
     </a.group>
   );
-}
-export default Island
+};
+export default Island;
