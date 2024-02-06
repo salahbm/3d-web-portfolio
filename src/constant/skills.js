@@ -6,10 +6,7 @@ import {
   linkedin,
   naver,
   nia,
-  pricewise,
-  snapgram,
   summiz,
-  threads,
   twitter
 } from "../assets/icons";
 

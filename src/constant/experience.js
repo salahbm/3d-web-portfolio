@@ -1,16 +1,29 @@
 import {
   bsglobal,
   car,
+  cryptoCare,
   jewelry,
   nia
 } from "../assets/icons";
 
 export const experiences = [{
+  title: "Full Stack Engineer",
+  company_name: "CryptoCare Seoul",
+  icon: cryptoCare,
+  iconBg: "#accbe1",
+  date: "January 2024 - Present",
+  points: [
+' Developed company wallet ‘HnPay’ on Binance network from scratch',
+ 'Improved security and UI/UX for better user experience',
+'Enabled all world crypto wallet needs on cross-platform'
+
+  ],
+},{
     title: "Full Stack Engineer (React Native, React JS, Next JS)",
     company_name: "Nia Labs Seoul",
     icon: nia,
     iconBg: "#accbe1",
-    date: "October 2022 - Present",
+    date: "October 2022 - January 2024",
     points: [
       "Developed Cryptocurrency Tracker based on Ethereum using ReactJS and NodeJS.",
       "Created several Cryptocurrency wallets that can work with both crypto tokens and bank wallets using React Native.",
@@ -22,7 +35,7 @@ export const experiences = [{
     company_name: "Mr. Joni Web USA",
     icon: jewelry,
     iconBg: "pink",
-    date: "Sep 2023 – Present(2024.01)",
+    date: "Sep 2023 – 2024.01",
     points: [
       "Led the development of a dynamic e-commerce platform for jewelery, ensuring a seamless shopping experience for a diverse customer base.",
       "Designed and developed a responsive website for optimal performance on all devices.",

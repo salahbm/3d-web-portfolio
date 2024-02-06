@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
-import Music from "./Music";
-import sakura2 from "../assets/sakura2.mp3";
+import React, { useEffect, useRef, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import Music from './Music';
+import sakura2 from '../assets/sakura2.mp3';
 const Navbar = () => {
   const audioRef = useRef(new Audio(sakura2));
   audioRef.current.volume = 0.35;
@@ -20,32 +20,40 @@ const Navbar = () => {
   return (
     <header className="header">
       <NavLink
-        to={"/"}
-        className="w-24 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md"
+        to={'/'}
+        className="md:w-24 w-16 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md"
       >
-        <p className="blue-gradient_text text-sm"> Muhammad</p>
+        <p className="blue-gradient_text md:text-sm text-[10px]"> Muhammad</p>
       </NavLink>
-      <nav className="flex text-sm md:text-lg gap-3 font-bold items-center justify-between ">
+      <nav className="flex text-[12px] md:text-lg gap-2 md:gap-3 font-bold items-center justify-between ">
         <NavLink
-          to={"/about"}
+          to={'/about'}
           className={({ isActive }) =>
-            isActive ? "text-blue-500" : " text-neutral-700"
+            isActive ? 'text-blue-500' : ' text-neutral-700'
           }
         >
           About
         </NavLink>
         <NavLink
-          to={"/projects"}
+          to={'/projects'}
           className={({ isActive }) =>
-            isActive ? "text-blue-500" : " text-neutral-700"
+            isActive ? 'text-blue-500' : ' text-neutral-700'
           }
         >
           Projects
         </NavLink>
         <NavLink
-          to={"/contact"}
+          to={'/experience'}
           className={({ isActive }) =>
-            isActive ? "text-blue-500" : " text-neutral-700"
+            isActive ? 'text-blue-500' : ' text-neutral-700'
+          }
+        >
+          Experience
+        </NavLink>
+        <NavLink
+          to={'/contact'}
+          className={({ isActive }) =>
+            isActive ? 'text-blue-500' : ' text-neutral-700'
           }
         >
           Contact

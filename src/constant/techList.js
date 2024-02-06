@@ -2,6 +2,7 @@ import {
     appwrite,
     aws,
     css,
+    django,
     express,
     figma,
     firebase,
@@ -15,6 +16,7 @@ import {
     mui,
     nextjs,
     nodejs,
+    python,
     query,
     react,
     redux,
@@ -39,6 +41,12 @@ export const langAndState = [
         name: "JavaScript",
         type: "Frontend",
         level:4
+    },
+    {
+        imageUrl: python,
+        name: "Python",
+        type: "Fronted",
+        level:3
     },
 
 
@@ -122,6 +130,12 @@ export const Back=[    {
     name: "Firebase",
     type: "Backend",
     level:4
+},
+{
+    imageUrl: django,
+    name: "Django",
+    type: "Backend",
+    level:2
 },    {
     imageUrl: express,
     name: "Express",

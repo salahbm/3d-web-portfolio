@@ -37,11 +37,14 @@ import swift from './swift.svg'
 import vite from './vite.svg'
 import jewelry from './jewelry.svg'
 import appwrite from './icon.svg'
+import python from './python.svg'
+import django from './django.svg'
 import threejs from './Appwrite.svg'
 import soundon from './soundon.png'
 import soundoff from './soundoff.png'
 import shadcn from './shadcn.png'
 import bsglobal from './bsglobal.png'
+import cryptoCare from './cryptoCare.png'
 
 export {
     css,
@@ -87,5 +90,6 @@ naver,
 nia,
 bsglobal,
 jewelry,
-swap
+swap,
+django, python,cryptoCare
 }
