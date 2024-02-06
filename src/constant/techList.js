@@ -74,7 +74,7 @@ export const langAndState = [
         imageUrl: swift,
         name: "Swift",
         type: "Frontend",
-        level:2
+        level:1
     },
     {
         imageUrl: kotlin,
@@ -86,7 +86,7 @@ export const langAndState = [
         imageUrl: redux,
         name: "Redux",
         type: "State Management",
-        level:3
+        level:4
     },
     {
         imageUrl: query,

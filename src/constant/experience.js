@@ -25,9 +25,10 @@ export const experiences = [{
     iconBg: "#accbe1",
     date: "October 2022 - January 2024",
     points: [
-      "Developed Cryptocurrency Tracker based on Ethereum using ReactJS and NodeJS.",
-      "Created several Cryptocurrency wallets that can work with both crypto tokens and bank wallets using React Native.",
-      "Enabled FIDO2 security with TrustKey.",
+ " Developed Cryptocurrency Tracker, Cryptocurrency wallets based on Ethereum using ReactJS/NodeJS/React Native.",
+ "Enabled FIDO2 security with TrustKey.",
+" Worked on CIC mobile and web commerce platforms,  dedicated for web/android/iOS which handles 5000+   users."
+,
     ],
   },
   {
@@ -50,8 +51,9 @@ export const experiences = [{
     date: "03.2020 - 12.2022",
     points: [
       "Producing scalable and modern web page. Managing its data and etc ",
-      "Adding, updating, editing, and publishing photo/videos.",
-      "Timer and Calculator using Android Studio.",
+      "Adding, updating, editing, and publishing photo/videos on the website",
+      "Participated developing agency website as front-end developer created eye-catching design.",
+     "Implemented easy and fast user-admin panels"
     ],
   },
 
