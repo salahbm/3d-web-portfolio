@@ -37,13 +37,14 @@ const Projects = () => {
                 </div>
               </div>
               {project?.images ? (
-                <div className=" flex items-center flex-row w-1/4 h-1/4 ">
+                <div className="flex items-center flex-row w-1/4 h-1/4">
                   {project?.images.map((item, i) => (
                     <img
                       key={i}
                       src={item}
                       alt="threads"
                       className="object-cover h-full w-full m-1"
+                      style={{ maxHeight: '100%', maxWidth: '100%' }}
                     />
                   ))}
                 </div>

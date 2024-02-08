@@ -65,7 +65,7 @@ export const projects = [
     iconsUrl: estate,
     theme: 'btn-back-black',
     linkGitHub: 'https://github.com/salahbm/snapgram',
-    linkWebsite: 'https://example.com/snapgram-social-media',
+    linkWebsite: 'https://snapgram-tawny.vercel.app/',
     description: [
       'Snapgram is a dynamic social media platform inspired by the popular features of Snapchat and Instagram.',
       'Users can enjoy a wide range of functionalities including photo sharing, stories, and messaging, creating an immersive and interactive social experience.',
@@ -148,8 +148,8 @@ export const projects = [
     name: 'Metapin Extension',
     iconsUrl: estate,
     theme: 'btn-back-blue',
-    link: 'https://github.com/salahbm/fido2-on-Metamask_extension',
-    linkGitHub: 'https://github.com/salahbm/fido2-on-Metamask_extension',
+    link: 'https://github.com/salahbm/MetaPin-extension',
+    linkGitHub: 'https://github.com/salahbm/MetaPin-extension',
     description: [
       'Metapin Extension is a browser extension that implements FIDO2 passwordless login and signup functionality, inspired by Metamask.',
       'With this extension, users can securely authenticate and access web services without the need for traditional passwords, enhancing security and convenience.',
@@ -160,8 +160,8 @@ export const projects = [
     name: 'Crypto Wallet',
     iconsUrl: estate,
     theme: 'btn-back-black',
-    link: 'https://github.com/salahbm/CryptoWallet',
-    linkGitHub: 'https://github.com/salahbm/CryptoWallet',
+    link: 'https://github.com/salahbm/CryptoWallet-Fido',
+    linkGitHub: 'https://github.com/salahbm/CryptoWallet-Fido',
     description: [
       'Crypto Wallet is a versatile mobile wallet application developed using React Native.',
       'It enables users to securely send and receive tokens on the Ethereum main-net and test-nets, providing a convenient solution for managing cryptocurrency assets.',
@@ -172,8 +172,8 @@ export const projects = [
     name: 'ShopMe',
     iconsUrl: estate,
     theme: 'btn-back-pink',
-    link: 'https://github.com/salahbm/shopme',
-    linkGitHub: 'https://github.com/salahbm/shopme',
+    link: 'https://github.com/salahbm/ecommerce',
+    linkGitHub: 'https://github.com/salahbm/ecommerce',
     description: [
       'ShopMe is a feature-rich e-commerce website built with Next.js.',
       'Utilizing technologies such as Tailwind CSS, Stripe, Firebase, and Redux Toolkit, ShopMe provides a seamless and enjoyable shopping experience for users.',
