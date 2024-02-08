@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-import CTA from "../components/CTA";
-import { arrow } from "../assets/icons";
-import { projects } from "../constant/skills";
+import CTA from '../components/CTA';
+import { arrow } from '../assets/icons';
+import { projects } from '../constant/skills';
 
 const Projects = () => {
   return (
     <section className="max-container">
       <h1 className="head-text">
-        My{" "}
+        My{' '}
         <span className="blue-gradient_text drop-shadow font-semibold">
           Projects
         </span>
@@ -29,7 +29,7 @@ const Projects = () => {
               <div className={`btn-back rounded-xl ${project.theme}`} />
               <div className="btn-front rounded-xl flex justify-center items-center">
                 <img
-                  src={project.iconUrl}
+                  src={project.iconsUrl}
                   alt="threads"
                   className="w-1/2 h-1/2 object-contain"
                 />
@@ -40,15 +40,33 @@ const Projects = () => {
               <h4 className="text-2xl font-poppins font-semibold">
                 {project.name}
               </h4>
-              <p className="mt-2 text-slate-500">{project.description}</p>
+              <p className="mt-2 text-slate-500 overflow-y-auto max-h-[150px] md:max-h-full">
+                {project.description}
+              </p>
+
               <div className="mt-5 flex items-center gap-2 font-poppins">
                 <Link
-                  to={project.link}
+                  to={project.linkWebsite}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-semibold text-blue-600"
                 >
                   Live Link
+                </Link>
+                <img
+                  src={arrow}
+                  alt="arrow"
+                  className="w-4 h-4 object-contain"
+                />
+              </div>
+              <div className="mt-1 flex items-center gap-2 font-poppins">
+                <Link
+                  to={project.linkGitHub}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-blue-600"
+                >
+                  GitHub Link
                 </Link>
                 <img
                   src={arrow}
