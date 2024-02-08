@@ -36,7 +36,6 @@ import {
 export const projects = [
   {
     name: 'Other Projects',
-    images: [estate],
     iconsUrl: estate,
     theme: 'btn-back-black',
     linkWebsite: 'https://github.com/salahbm?tab=repositories',
@@ -47,7 +46,7 @@ export const projects = [
   },
   {
     name: 'Naver Scraping Web',
-    images: [naver1, naver2, naver3, naver4],
+    images: [naver1, naver3, naver4],
     iconsUrl: estate,
     theme: 'btn-back-yellow',
     linkGitHub: 'https://github.com/salahbm/Naver-Scraper',
@@ -131,7 +130,7 @@ export const projects = [
   },
   {
     name: 'MrJoniandCo [under development]',
-    images: [jewelry1, jewelry2, jewelry3, jewelry4],
+    images: [jewelry1, jewelry2, jewelry4],
     iconsUrl: estate,
     theme: 'btn-back-pink',
     linkGitHub: 'https://github.com/salahbm/ecommerse-jewelry',
@@ -147,7 +146,6 @@ export const projects = [
 
   {
     name: 'Metapin Extension',
-    images: [estate],
     iconsUrl: estate,
     theme: 'btn-back-blue',
     link: 'https://github.com/salahbm/fido2-on-Metamask_extension',
@@ -160,7 +158,6 @@ export const projects = [
   },
   {
     name: 'Crypto Wallet',
-    images: [summiz],
     iconsUrl: estate,
     theme: 'btn-back-black',
     link: 'https://github.com/salahbm/CryptoWallet',
@@ -173,7 +170,6 @@ export const projects = [
   },
   {
     name: 'ShopMe',
-    images: [estate],
     iconsUrl: estate,
     theme: 'btn-back-pink',
     link: 'https://github.com/salahbm/shopme',
