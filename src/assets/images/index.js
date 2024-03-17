@@ -35,7 +35,7 @@ import imaginify4 from './imaginify4.png';
 // figma
 import figma1 from './figma1.png';
 import figma2 from './figma2.png';
-import figma3 from './figma3.png';
+import figma4 from './figma4.jpeg';
 
 export {
   ai1,
@@ -66,5 +66,5 @@ export {
   imaginify4,
   figma1,
   figma2,
-  figma3,
+  figma4,
 };
